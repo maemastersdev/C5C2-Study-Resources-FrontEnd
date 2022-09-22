@@ -7,6 +7,9 @@ import "./Grid.scss";
 /*--------UTILITY FUNCTIONS -----------------*/
 import { getAllResources } from "../../utils/index";
 
+/*--------REACT COMPONENT-----------------*/
+import { ResourceCard } from "../index";
+
 // interface IGrid {
 //   children: ReactNode
 // }
@@ -19,11 +22,9 @@ const Grid = (): JSX.Element => {
   return (
     <div className="Wrapper">
       <div className="Content">
-        <button>post1</button>
-        <button>post2</button>
-        <button>post3</button>
-        <button>post4</button>
-        <button>post5</button>
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
       </div>
     </div>
   );
