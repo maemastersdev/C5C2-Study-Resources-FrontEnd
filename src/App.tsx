@@ -1,7 +1,13 @@
-import { greet } from "./utils/greet";
+/*----------------Importing React Components-------------------------*/
+import { Grid } from "./components/index";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <>
+      <h1>Hello everyone</h1>
+      <Grid />
+    </>
+  );
 }
 
 export default App;
