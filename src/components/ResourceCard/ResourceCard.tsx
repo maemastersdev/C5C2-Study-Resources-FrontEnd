@@ -7,7 +7,7 @@ import spacePictures from "../../assets/images/spacePictures";
 import {
   IResourceArray,
   ITagsArray,
-  IUserName,
+  // IUserName,
 } from "../../Interfaces/Interfaces";
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
@@ -24,7 +24,7 @@ const ResourceCard = ({
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
-  const [currentUserName, setCurrentUserName] = useState<IUserName>();
+  // const [currentUserName, setCurrentUserName] = useState<IUserName>();
 
   useEffect(() => {
     const getTagsForResource = async (): Promise<void> => {
@@ -32,14 +32,13 @@ const ResourceCard = ({
       const tags: ITagsArray[] = await response.data;
       setTagsList(tags);
     };
-    const getSingleUserName = async (): Promise<void> => {
-      const response = await axios.get(`${serverUrl}/user/${user_id}`);
-      const nameResponse = await response.data;
-      setCurrentUserName(nameResponse);
-    };
+    // const getSingleUserName = async (): Promise<void> => {
+    //   const response = await axios.get(`${serverUrl}/user/${user_id}`);
+    //   const nameResponse = await response.data;
+    //   // setCurrentUserName(nameResponse);
+    // };
 
     getTagsForResource();
-    getSingleUserName();
     setRandomIndex(getRandomProperty(spacePictures));
   }, [resource_id, user_id]);
 
