@@ -35,6 +35,16 @@ const Grid = (): JSX.Element => {
         <ResourceCard />
         <ResourceCard />
         <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+        <ResourceCard />
+    
       </div>
     </div>
   );

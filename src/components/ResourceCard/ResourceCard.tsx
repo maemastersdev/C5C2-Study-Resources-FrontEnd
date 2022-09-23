@@ -1,8 +1,9 @@
 import React from "react";
-
 /*------------STYLING IMPORT -----------------------*/
 import "./ResourceCard.scss";
 /*------------ASSET IMPORT-----------------------*/
+
+import images from '../../assets/images/images'
 
 const ResourceCard = (): JSX.Element => {
   return (
@@ -11,18 +12,16 @@ const ResourceCard = (): JSX.Element => {
         <div className="post">
           <div className="header_post">
             <img
-              src="https://patoliyainfotech.com/wp-content/uploads/2019/10/one-year-of-react-native.png"
+              src={images.SpaceOne}
               alt=""
             />
           </div>
 
           <div className="body_post">
             <div className="post_content">
-              <h1>Lorem Ipsum</h1>
+              <h1>Title Goes HERE</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Adipisci animi assumenda cumque deserunt dolorum ex
-                exercitationem.
+                Example Resource Description
               </p>
 
               <div className="container_infos">
