@@ -54,7 +54,7 @@ const ResourceCard = ({
 
         <div className="body_post">
           <div className="post_content">
-            <h1>{resource_name} :</h1>
+            <h1>{resource_name}:</h1>
             <p>{review}</p>
 
             <div className="container_infos">
