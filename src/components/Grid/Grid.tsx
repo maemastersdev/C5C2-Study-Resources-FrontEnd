@@ -1,5 +1,5 @@
 /*--------IMPORT FROM REAT-----------------*/
-import React from "react";
+import React, { useEffect, useState } from "react";
 /*--------STYLING IMPORT -----------------*/
 import "./Grid.scss";
 /*--------EXTERNAL LIBRARIES -----------------*/
@@ -9,42 +9,43 @@ import "./Grid.scss";
 
 /*--------REACT COMPONENT-----------------*/
 import { ResourceCard } from "../index";
+import axios from "axios";
+import { IResourceArray } from "../../Interfaces/Interfaces";
+import serverUrl from "../../utils/serverUrl";
 
 // interface IGrid {
 //   children: ReactNode
 // }
 
-// interface IResourceArray {
-//   resource_id : number,
-//   resource_name : string,
-//   author_name : string,
-//   url : string,
-//   content_type : string,
-//   learning_stage : number,
-//   date : string,
-//   user_id : string,
-//   review : string,
-//   likes : number,
-
-// }
-
 const Grid = (): JSX.Element => {
+  const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
+
+  async function getAllResources(): Promise<void> {
+    const response = await axios.get(`${serverUrl}/resources`);
+    const allResources: IResourceArray[] = await response.data;
+    setResourcesArray(allResources);
+  }
+
+  useEffect(() => {
+    getAllResources();
+  }, []);
+
   return (
     <div className="Wrapper">
+      <h1 className="Grid__Header">Study Resources</h1>
       <div className="Content">
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-        <ResourceCard />
-    
+        {resourcesArray.map((item) => (
+          <ResourceCard
+            key={item.resource_id}
+            resource_id={item.resource_id}
+            resource_name={item.resource_name}
+            review={item.review}
+            url={item.url}
+            author_name={item.author_name}
+            thumbnail={item.thumbnail}
+            user_id={item.user_id}
+          />
+        ))}
       </div>
     </div>
   );
