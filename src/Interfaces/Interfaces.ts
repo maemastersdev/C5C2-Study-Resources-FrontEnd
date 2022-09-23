@@ -7,6 +7,7 @@ export interface IResourceArray {
   learning_stage?: number;
   date?: string;
   user_id: string;
+  user_name?: string;
   review?: string;
   likes?: number;
   thumbnail?: string;

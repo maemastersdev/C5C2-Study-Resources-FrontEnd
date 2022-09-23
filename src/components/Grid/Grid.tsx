@@ -44,6 +44,7 @@ const Grid = (): JSX.Element => {
             author_name={item.author_name}
             thumbnail={item.thumbnail}
             user_id={item.user_id}
+            user_name={item.user_name}
           />
         ))}
       </div>
