@@ -57,9 +57,9 @@ const ResourceCard = ({
               alt="thumbnail"
             />
             <div>
-              <p className="user_name">
+              {/* <p className="user_name">
                 Posted by {currentUserName?.user_name}{" "}
-              </p>
+              </p> */}
             </div>
           </a>
         </div>
