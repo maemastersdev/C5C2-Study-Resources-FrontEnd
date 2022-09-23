@@ -47,14 +47,14 @@ const ResourceCard = ({
               alt="thumbnail"
             />
             <div>
-              <p className="user_name">Posted by {user_name}</p>
+              <b className="user_name">Posted by {user_name}</b>
             </div>
           </a>
         </div>
 
         <div className="body_post">
           <div className="post_content">
-            <h1>{resource_name}</h1>
+            <h1>{resource_name} :</h1>
             <p>{review}</p>
 
             <div className="container_infos">
