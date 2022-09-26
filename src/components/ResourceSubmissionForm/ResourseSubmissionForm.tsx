@@ -9,8 +9,8 @@ const ResourceSubmissionForm = (): JSX.Element => {
   const [URL, setURL] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [contentType, setContentType] = useState<any>("");
-  const [seleneWeek, setSeleneWeek] = useState("");
-  const [review, setReview] = useState("");
+  // const [seleneWeek, setSeleneWeek] = useState("");
+  // const [review, setReview] = useState("");
 
   console.log(contentType, "this is the content type");
 
