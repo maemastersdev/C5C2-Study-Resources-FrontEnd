@@ -5,7 +5,7 @@ function App(): JSX.Element {
   return (
     <>
       <Grid />
-      <ResourceSubmissionForm />
+      <ResourceSubmissionForm user_id={"1"} user_name={"Neo"} />
     </>
   );
 }
