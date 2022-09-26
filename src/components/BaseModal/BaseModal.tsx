@@ -1,8 +1,8 @@
-import { Button, Modal } from 'antd';
-import React, { useState } from 'react';
-import ResourceSubmissionForm from '../ResourceSubmissionForm/ResourseSubmissionForm';
+import { Button, Modal } from "antd";
+import React, { useState } from "react";
+import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmissionForm";
 
-const BaseModal: React.FC = () : JSX.Element => {
+const BaseModal: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -17,9 +17,9 @@ const BaseModal: React.FC = () : JSX.Element => {
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         width={1000}
-        bodyStyle={{ height: '600px'}}
+        bodyStyle={{ height: "600px" }}
       >
-        <ResourceSubmissionForm user_id={"1"} user_name={"Neo"}/>
+        <ResourceSubmissionForm user_id={"1"} user_name={"Neo"} />
       </Modal>
     </>
   );
