@@ -3,10 +3,13 @@
 import { Grid, BaseModal } from "./components/index";
 import PageHeader from "./components/PageHeader/PageHeader";
 
-//Need to lift state for the following :
-//user_id,
-//user_name
-//
+/*Need to add state and props  for the following :
+const [loginActive, setLoginActive]
+user_id,
+user_name 
+
+*/
+
 
 function App(): JSX.Element {
   return (

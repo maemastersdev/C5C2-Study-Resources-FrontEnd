@@ -2,6 +2,8 @@ import React from "react";
 
 import "./PageHeader.scss";
 
+// import BaseModal from "../BaseModal/BaseModal";
+
 const PageHeader = (): JSX.Element => {
   return (
     <>
