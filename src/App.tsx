@@ -1,11 +1,11 @@
 /*----------------Importing React Components-------------------------*/
-import { Grid } from "./components/index";
+import { Grid, ResourceSubmissionForm } from "./components/index";
 
 function App(): JSX.Element {
   return (
     <>
       <Grid />
-      {/* <ResourceSubmissionForm /> */}
+      <ResourceSubmissionForm />
     </>
   );
 }
