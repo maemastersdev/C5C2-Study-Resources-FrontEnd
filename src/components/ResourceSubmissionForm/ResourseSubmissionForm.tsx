@@ -8,7 +8,7 @@ const ResourceSubmissionForm = (): JSX.Element => {
   const [author, setAuthor] = useState("");
   const [URL, setURL] = useState("");
   const [thumbnail, setThumbnail] = useState("");
-  const [contentType, setContentType] = useState<any>("");
+  const [contentType, setContentType] = useState<unknown>("");
   // const [seleneWeek, setSeleneWeek] = useState("");
   // const [review, setReview] = useState("");
 
