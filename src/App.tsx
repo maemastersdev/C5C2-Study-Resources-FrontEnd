@@ -10,7 +10,6 @@ user_name
 
 */
 
-
 function App(): JSX.Element {
   return (
     <>
