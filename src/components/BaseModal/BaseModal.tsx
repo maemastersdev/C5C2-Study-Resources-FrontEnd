@@ -1,25 +1,25 @@
 import { Button, Modal } from 'antd';
 import React, { useState } from 'react';
+import ResourceSubmissionForm from '../ResourceSubmissionForm/ResourseSubmissionForm';
 
-const BaseModal: React.FC = () => {
+const BaseModal: React.FC = () : JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
       <Button type="primary" onClick={() => setOpen(true)}>
-        Open Modal of 1000px width
+        Submit Post
       </Button>
       <Modal
-        title="Modal 1000px width"
+        title="New Post Submission"
         centered
         open={open}
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         width={1000}
+        bodyStyle={{ height: '600px'}}
       >
-        <p>some contents...</p>
-        <p>some contents...</p>
-        <p>some contents...</p>
+        <ResourceSubmissionForm user_id={"1"} user_name={"Neo"}/>
       </Modal>
     </>
   );
