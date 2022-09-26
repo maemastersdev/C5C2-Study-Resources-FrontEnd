@@ -18,14 +18,14 @@ p {
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    position: relative;
-    text-align: center;
-     background: linear-gradient(60deg, rgb(168, 10, 94) 0%, rgb(63, 1, 39) 80%);
-    color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(60deg, rgb(168, 10, 94) 0%, rgb(63, 1, 39) 80%);
+  color: white;
 }
 .logo {
   width: 50px;
