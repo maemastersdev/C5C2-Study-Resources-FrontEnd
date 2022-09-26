@@ -32,7 +32,6 @@ const Grid = (): JSX.Element => {
 
   return (
     <div className="Wrapper">
-      <h1 className="Grid__Header">Study Resources</h1>
       <div className="Content">
         {resourcesArray.map((item) => (
           <ResourceCard
