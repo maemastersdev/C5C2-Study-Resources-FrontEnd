@@ -24,7 +24,11 @@ p {
   z-index: 999;
   position: relative;
   text-align: center;
-  background: linear-gradient(60deg, rgb(168, 10, 94) 0%, rgb(63, 1, 39) 80%);
+  background: linear-gradient(
+    60deg,
+    rgba(154, 2, 136, 0.737),
+    rgb(63, 1, 39) 80%
+  );
   color: white;
 }
 .logo {
