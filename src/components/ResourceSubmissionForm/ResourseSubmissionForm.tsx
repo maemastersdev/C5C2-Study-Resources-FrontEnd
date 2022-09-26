@@ -45,19 +45,19 @@ const ResourceSubmissionForm = ({
           onChange={(e) => setAuthor(e.target.value)}
           value={author}
         />
-        {console.log(author)}
         <Form.Label>URL</Form.Label>
         <Form.Control
           type="url"
           placeholder="url"
           onChange={(e) => setURL(e.target.value)}
           value={URL}
+          required={true}
         />
         {console.log(URL)}
         <Form.Label>Thumbnail</Form.Label>
         <Form.Control
           type="url"
-          placeholder="thumbnail"
+          placeholder="Enter an optional image url to be used as the thumbnail"
           onChange={(e) => setThumbnail(e.target.value)}
           value={thumbnail}
         />
@@ -68,6 +68,7 @@ const ResourceSubmissionForm = ({
           as="textarea"
           rows={3}
           title="review"
+          placeholder="Write a short review or a brief note on what the post is about"
           onChange={(e) => setReview(e.target.value)}
           value={review}
         />
