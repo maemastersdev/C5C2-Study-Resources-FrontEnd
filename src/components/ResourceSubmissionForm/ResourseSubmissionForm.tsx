@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import axios from 'axios'
+import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 
-import {IResourceArray} from '../../Interfaces/Interfaces'
+import { IResourceArray } from "../../Interfaces/Interfaces";
 
-const ResourceSubmissionForm = ({user_id, user_name} : IResourceArray ): JSX.Element => {
+const ResourceSubmissionForm = ({
+  user_id,
+  user_name,
+}: IResourceArray): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
   const [URL, setURL] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [review, setReview] = useState("");
 
-
   const submitPost = async () => {
-
-    await axios.post(`${serverUrl}/postResource` , {
-      resource_name : resourceName,
-      author_name : author,
-      url : URL,
-      user_id : user_id,
-      user_name : user_name,
-      thumbnail : thumbnail,
-      review : review
-    })
-  }
+    await axios.post(`${serverUrl}/postResource`, {
+      resource_name: resourceName,
+      author_name: author,
+      url: URL,
+      user_id: user_id,
+      user_name: user_name,
+      thumbnail: thumbnail,
+      review: review,
+    });
+  };
 
   return (
     <Form>
@@ -63,15 +64,19 @@ const ResourceSubmissionForm = ({user_id, user_name} : IResourceArray ): JSX.Ele
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
-        <Form.Control as="textarea" rows={3} title="review"
+        <Form.Control
+          as="textarea"
+          rows={3}
+          title="review"
           onChange={(e) => setReview(e.target.value)}
           value={review}
         />
       </Form.Group>
-      <button 
-      type="submit" 
-      className="btn btn-success"
-      onClick={() => submitPost()}>
+      <button
+        type="submit"
+        className="btn btn-success"
+        onClick={() => submitPost()}
+      >
         Submit your post
       </button>
     </Form>
