@@ -8,30 +8,30 @@ const ResourceSubmissionForm = (): JSX.Element => {
   const [author, setAuthor] = useState("");
   const [URL, setURL] = useState("");
   const [thumbnail, setThumbnail] = useState("");
-  // @ts-nocheck
-  const [contentType, setContentType] = useState<any>("");
+
+  // const [contentType, setContentType] = useState("");
   // const [seleneWeek, setSeleneWeek] = useState("");
   // const [review, setReview] = useState("");
 
-  console.log(contentType, "this is the content type");
+  // console.log(contentType, "this is the content type");
 
-  const storedContent: string[] = [
-    "video",
-    "article",
-    "ebook",
-    "podcast",
-    "exercises",
-    "software tool",
-    "course",
-    "diagram",
-    "cheat-sheet",
-    "reference",
-    "resource list",
-    "youtube channel",
-    "organisation",
-    "website",
-    "other",
-  ];
+  // const storedContent: string[] = [
+  //   "video",
+  //   "article",
+  //   "ebook",
+  //   "podcast",
+  //   "exercises",
+  //   "software tool",
+  //   "course",
+  //   "diagram",
+  //   "cheat-sheet",
+  //   "reference",
+  //   "resource list",
+  //   "youtube channel",
+  //   "organisation",
+  //   "website",
+  //   "other",
+  // ];
 
   const seleneWeeks: number[] = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
@@ -71,7 +71,7 @@ const ResourceSubmissionForm = (): JSX.Element => {
           value={thumbnail}
         />
         {console.log(thumbnail)}
-        <DropdownButton
+        {/* <DropdownButton
           id="dropdown-basic-button btn disabled"
           title={contentType}
         >
@@ -83,7 +83,7 @@ const ResourceSubmissionForm = (): JSX.Element => {
               {content}
             </Dropdown.Item>
           ))}
-        </DropdownButton>
+        </DropdownButton> */}
         <DropdownButton id="dropdown-basic-button" title="Selene Week">
           {seleneWeeks.map((item) => (
             <Dropdown.Item key={`#/action-${item}`}>{item}</Dropdown.Item>
