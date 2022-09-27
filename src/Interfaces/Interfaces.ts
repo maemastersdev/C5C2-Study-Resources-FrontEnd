@@ -28,4 +28,6 @@ export interface IPageHeader {
   setFilterSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   currentActiveUser: string;
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
+  tagsArray: string[];
+  setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
 }
