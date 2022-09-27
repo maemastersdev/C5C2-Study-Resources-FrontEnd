@@ -16,7 +16,6 @@ const BaseModal = ({
   const [open, setOpen] = useState(false);
 
   const ShowUtilities = currentAcitveUser.length > 0;
-  console.log(ShowUtilities);
 
   const signOutUser = () => {
     setCurrentActiveUser("");
@@ -31,10 +30,10 @@ const BaseModal = ({
   return (
     <>
       {!ShowUtilities ? (
-        <button 
-        className="glow-on-hover" 
-        type="button"
-        onClick={() => LogInUser()}
+        <button
+          className="glow-on-hover"
+          type="button"
+          onClick={() => LogInUser()}
         >
           Log In
         </button>

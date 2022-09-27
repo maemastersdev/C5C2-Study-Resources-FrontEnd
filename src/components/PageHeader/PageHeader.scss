@@ -78,6 +78,13 @@ p {
   background-color: white;
 }
 
+.search_content {
+  position: relative;
+  height: 5vh;
+  text-align: center;
+  background-color: white;
+}
+
 /* Animation */
 
 .parallax > use {
@@ -119,4 +126,11 @@ p {
   h1 {
     font-size: 24px;
   }
+}
+
+.utility_buttons {
+  margin: 2rem 1rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
