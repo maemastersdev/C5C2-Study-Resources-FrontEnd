@@ -2,7 +2,7 @@ import React from "react";
 
 import "./PageHeader.scss";
 
-import { SearchBar, BaseModal } from "../index";
+import { SearchBar, BaseModal, TagListSelect } from "../index";
 import { IPageHeader } from "../../Interfaces/Interfaces";
 
 const PageHeader = ({
@@ -10,6 +10,8 @@ const PageHeader = ({
   setFilterSearchTerm,
   currentActiveUser,
   setCurrentActiveUser,
+  tagsArray,
+  setTagsArray,
 }: IPageHeader): JSX.Element => {
   return (
     <>
@@ -129,14 +131,21 @@ const PageHeader = ({
           </svg>
         </div>
       </div>
-      <div className="content search_flex">
-        <BaseModal
-          currentAcitveUser={currentActiveUser}
-          setCurrentActiveUser={setCurrentActiveUser}
-        />
+      <div className="tag_container">
+        <div className="tag_select">
+          <TagListSelect tagsArray={tagsArray} setTagsArray={setTagsArray} />
+        </div>
+      </div>
+      <div className="search_content search_flex">
         <SearchBar
           filterSearchTerm={filterSearchTerm}
           setFilterSearchTerm={setFilterSearchTerm}
+        />
+      </div>
+      <div className="utility_buttons">
+        <BaseModal
+          currentAcitveUser={currentActiveUser}
+          setCurrentActiveUser={setCurrentActiveUser}
         />
       </div>
     </>
