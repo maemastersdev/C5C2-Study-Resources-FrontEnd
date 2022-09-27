@@ -1,11 +1,15 @@
 import React from "react";
-import { IPageHeader } from "../../Interfaces/Interfaces";
 import "./SearchBar.scss";
+
+interface ISearchBar {
+  filterSearchTerm: string;
+  setFilterSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
 
 const SearchBar = ({
   filterSearchTerm,
   setFilterSearchTerm,
-}: IPageHeader): JSX.Element => {
+}: ISearchBar): JSX.Element => {
   return (
     <form className="search-container">
       <input

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 
+import "./ResourceSubmissionForm.scss";
+
 import { IResourceArray } from "../../Interfaces/Interfaces";
 
 import imageUrlChecker from "../../utils/imageUrlChecker";
@@ -43,7 +45,12 @@ const ResourceSubmissionForm = ({
 
   return (
     <Form>
-      <AlertBanner resourceName={resourceName} URL={URL} review={review} />
+      <AlertBanner
+        resourceName={resourceName}
+        URL={URL}
+        review={review}
+        thumbnail={thumbnail}
+      />
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Resource Name</Form.Label>
         <Form.Control
@@ -90,14 +97,14 @@ const ResourceSubmissionForm = ({
       <div className="submit-buttons">
         <button
           type="submit"
-          className="btn btn-success"
+          className="glow-on-hover"
           onClick={() => submitPost()}
         >
           Submit your post
         </button>
         <button
           type="reset"
-          className="btn btn-warning"
+          className="glow-on-hover"
           onClick={() => resetPost()}
         >
           Clear Submission

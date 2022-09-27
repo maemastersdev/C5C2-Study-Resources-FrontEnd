@@ -13,13 +13,18 @@ user_name
 
 function App(): JSX.Element {
   const [filterSearchTerm, setFilterSearchTerm] = useState("");
-  console.log("The current search term is", filterSearchTerm);
+  const [currentActiveUser, setCurrentActiveUser] = useState("");
+  const [tagsArray, setTagsArray] = useState<string[]>([]);
 
   return (
     <>
       <PageHeader
         setFilterSearchTerm={setFilterSearchTerm}
         filterSearchTerm={filterSearchTerm}
+        currentActiveUser={currentActiveUser}
+        setCurrentActiveUser={setCurrentActiveUser}
+        tagsArray={tagsArray}
+        setTagsArray={setTagsArray}
       />
       <Grid />
     </>
