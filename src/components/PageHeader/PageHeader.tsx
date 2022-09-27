@@ -128,7 +128,7 @@ const PageHeader = ({
         </div>
       </div>
       <div className="content search_flex">
-        <BaseModal/>
+        <BaseModal />
         <SearchBar
           filterSearchTerm={filterSearchTerm}
           setFilterSearchTerm={setFilterSearchTerm}
