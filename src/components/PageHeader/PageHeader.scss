@@ -54,6 +54,16 @@ p {
   text-align: center;
 }
 
+.search_flex {
+  /*Flexbox for containers*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  margin: 2rem 1rem;
+}
+
 .waves {
   position: relative;
   width: 100%;

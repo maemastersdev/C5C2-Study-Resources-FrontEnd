@@ -2,9 +2,13 @@ import React from "react";
 
 import "./PageHeader.scss";
 
-// import BaseModal from "../BaseModal/BaseModal";
+import { SearchBar, BaseModal } from "../index";
+import { IPageHeader } from "../../Interfaces/Interfaces";
 
-const PageHeader = (): JSX.Element => {
+const PageHeader = ({
+  filterSearchTerm,
+  setFilterSearchTerm,
+}: IPageHeader): JSX.Element => {
   return (
     <>
       <div className="header">
@@ -123,7 +127,13 @@ const PageHeader = (): JSX.Element => {
           </svg>
         </div>
       </div>
-      {/* <div className="content flex"></div> */}
+      <div className="content search_flex">
+        <BaseModal />
+        <SearchBar
+          filterSearchTerm={filterSearchTerm}
+          setFilterSearchTerm={setFilterSearchTerm}
+        />
+      </div>
     </>
   );
 };

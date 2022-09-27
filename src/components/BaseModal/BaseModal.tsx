@@ -7,9 +7,19 @@ const BaseModal: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <Button type="primary" onClick={() => setOpen(true)}>
+      <Button
+        type="primary"
+        onClick={() => setOpen(true)}
+        shape="round"
+        style={{
+          background: "rgba(198, 40, 200, 0.5)",
+          borderColor: "rgba(41, 12, 41, 0.5)",
+          color: "black",
+        }}
+      >
         Submit Post
       </Button>
+
       <Modal
         title="New Post Submission"
         centered
@@ -17,7 +27,8 @@ const BaseModal: React.FC = (): JSX.Element => {
         onOk={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         width={1000}
-        bodyStyle={{ height: "600px" }}
+        bodyStyle={{ height: "700px" }}
+        footer={null}
       >
         <ResourceSubmissionForm user_id={"1"} user_name={"Neo"} />
       </Modal>
