@@ -4,21 +4,54 @@ import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmission
 
 import "./BaseModal.css";
 
-const BaseModal: React.FC = (): JSX.Element => {
+interface IBaseModal {
+  currentAcitveUser: string;
+  setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const BaseModal = ({
+  currentAcitveUser,
+  setCurrentActiveUser,
+}: IBaseModal): JSX.Element => {
   const [open, setOpen] = useState(false);
+
+  const ShowUtilities = currentAcitveUser.length > 0;
+  console.log(ShowUtilities);
+
+  const signOutUser = () => {
+    setCurrentActiveUser("");
+    console.log("You have been logged out");
+  };
+
+  const LogInUser = () => {
+    setCurrentActiveUser("Neo");
+    console.log("You have been been logged In");
+  };
 
   return (
     <>
-      <button
-        className="glow-on-hover"
+      {!ShowUtilities ? (
+        <button 
+        className="glow-on-hover" 
         type="button"
-        onClick={() => setOpen(true)}
-      >
-        Submit A Post
-      </button>
-      <button className="glow-on-hover" type="button">
-        Log Out
-      </button>
+        onClick={() => LogInUser()}
+        >
+          Log In
+        </button>
+      ) : (
+        <>
+          <button
+            className="glow-on-hover"
+            type="button"
+            onClick={() => setOpen(true)}
+          >
+            Submit A Post
+          </button>
+          <button className="glow-on-hover" type="button" onClick={signOutUser}>
+            Log Out
+          </button>
+        </>
+      )}
       <Modal
         title="New Post Submission"
         centered

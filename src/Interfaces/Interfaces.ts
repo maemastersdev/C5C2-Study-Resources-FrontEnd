@@ -26,4 +26,6 @@ export interface IUserName {
 export interface IPageHeader {
   filterSearchTerm: string;
   setFilterSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  currentActiveUser: string;
+  setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
 }

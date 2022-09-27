@@ -8,6 +8,8 @@ import { IPageHeader } from "../../Interfaces/Interfaces";
 const PageHeader = ({
   filterSearchTerm,
   setFilterSearchTerm,
+  currentActiveUser,
+  setCurrentActiveUser,
 }: IPageHeader): JSX.Element => {
   return (
     <>
@@ -128,7 +130,10 @@ const PageHeader = ({
         </div>
       </div>
       <div className="content search_flex">
-        <BaseModal />
+        <BaseModal
+          currentAcitveUser={currentActiveUser}
+          setCurrentActiveUser={setCurrentActiveUser}
+        />
         <SearchBar
           filterSearchTerm={filterSearchTerm}
           setFilterSearchTerm={setFilterSearchTerm}
