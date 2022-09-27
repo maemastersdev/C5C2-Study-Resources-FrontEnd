@@ -15,6 +15,7 @@ const BaseModal: React.FC = (): JSX.Element => {
           background: "rgba(198, 40, 200, 0.5)",
           borderColor: "rgba(41, 12, 41, 0.5)",
           color: "black",
+          height:"50px"
         }}
       >
         Submit Post
