@@ -1,23 +1,24 @@
-import { Button, Modal } from "antd";
+import { Modal } from "antd";
 import React, { useState } from "react";
 import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmissionForm";
 
-import './BaseModal.css'
+import "./BaseModal.css";
 
 const BaseModal: React.FC = (): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <button 
-      className="glow-on-hover" 
-      type="button"
-      onClick={() => setOpen(true)}
-      >Submit A Post</button>
-       <button 
-      className="glow-on-hover" 
-      type="button"
-      >Log Out</button>
+      <button
+        className="glow-on-hover"
+        type="button"
+        onClick={() => setOpen(true)}
+      >
+        Submit A Post
+      </button>
+      <button className="glow-on-hover" type="button">
+        Log Out
+      </button>
       <Modal
         title="New Post Submission"
         centered

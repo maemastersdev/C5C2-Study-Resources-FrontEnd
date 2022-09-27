@@ -2,7 +2,7 @@ import React from "react";
 
 import "./PageHeader.scss";
 
-import { SearchBar, BaseModal} from "../index";
+import { SearchBar, BaseModal } from "../index";
 import { IPageHeader } from "../../Interfaces/Interfaces";
 
 const PageHeader = ({
