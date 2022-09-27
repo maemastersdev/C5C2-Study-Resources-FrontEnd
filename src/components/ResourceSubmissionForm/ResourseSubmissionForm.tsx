@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import serverUrl from "../../utils/serverUrl";
 
 import { IResourceArray } from "../../Interfaces/Interfaces";
+
+import imageUrlChecker from "../../utils/imageUrlChecker";
+import serverUrl from "../../utils/serverUrl";
+
+import { AlertBanner } from "../index";
 
 const ResourceSubmissionForm = ({
   user_id,
@@ -16,19 +20,30 @@ const ResourceSubmissionForm = ({
   const [review, setReview] = useState("");
 
   const submitPost = async () => {
-    await axios.post(`${serverUrl}/postResource`, {
-      resource_name: resourceName,
-      author_name: author,
-      url: URL,
-      user_id: user_id,
-      user_name: user_name,
-      thumbnail: thumbnail,
-      review: review,
-    });
+    resourceName && URL && review && imageUrlChecker(thumbnail)
+      ? await axios.post(`${serverUrl}/postResource`, {
+          resource_name: resourceName,
+          author_name: author,
+          url: URL,
+          user_id: user_id,
+          user_name: user_name,
+          thumbnail: thumbnail,
+          review: review,
+        })
+      : console.log("correct your submission");
+  };
+
+  const resetPost = (): void => {
+    setResourceName("");
+    setAuthor("");
+    setURL("");
+    setThumbnail("");
+    setReview("");
   };
 
   return (
     <Form>
+      <AlertBanner resourceName={resourceName} URL={URL} review={review} />
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Resource Name</Form.Label>
         <Form.Control
@@ -62,7 +77,7 @@ const ResourceSubmissionForm = ({
           value={thumbnail}
         />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+      <Form.Group className="mb-3 " controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
         <Form.Control
           as="textarea"
@@ -70,16 +85,24 @@ const ResourceSubmissionForm = ({
           title="review"
           placeholder="Write a short review or a brief note on what the post is about"
           onChange={(e) => setReview(e.target.value)}
-          value={review}
         />
       </Form.Group>
-      <button
-        type="submit"
-        className="btn btn-success"
-        onClick={() => submitPost()}
-      >
-        Submit your post
-      </button>
+      <div className="submit-buttons">
+        <button
+          type="submit"
+          className="btn btn-success"
+          onClick={() => submitPost()}
+        >
+          Submit your post
+        </button>
+        <button
+          type="reset"
+          className="btn btn-warning"
+          onClick={() => resetPost()}
+        >
+          Clear Submission
+        </button>
+      </div>
     </Form>
   );
 };

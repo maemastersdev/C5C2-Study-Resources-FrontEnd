@@ -13,10 +13,6 @@ import axios from "axios";
 import { IResourceArray } from "../../Interfaces/Interfaces";
 import serverUrl from "../../utils/serverUrl";
 
-// interface IGrid {
-//   children: ReactNode
-// }
-
 const Grid = (): JSX.Element => {
   const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 

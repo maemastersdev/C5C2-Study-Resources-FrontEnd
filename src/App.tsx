@@ -1,6 +1,7 @@
 /*----------------Importing React Components-------------------------*/
 
-import { Grid, BaseModal } from "./components/index";
+import { useState } from "react";
+import { Grid } from "./components/index";
 import PageHeader from "./components/PageHeader/PageHeader";
 
 /*Need to add state and props  for the following :
@@ -11,10 +12,15 @@ user_name
 */
 
 function App(): JSX.Element {
+  const [filterSearchTerm, setFilterSearchTerm] = useState("");
+  console.log("The current search term is", filterSearchTerm);
+
   return (
     <>
-      <PageHeader />
-      <BaseModal />
+      <PageHeader
+        setFilterSearchTerm={setFilterSearchTerm}
+        filterSearchTerm={filterSearchTerm}
+      />
       <Grid />
     </>
   );

@@ -22,3 +22,8 @@ export interface ITagsArray {
 export interface IUserName {
   user_name: string;
 }
+
+export interface IPageHeader {
+  filterSearchTerm: string;
+  setFilterSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
