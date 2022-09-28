@@ -55,7 +55,7 @@ const BaseModal = ({
         bodyStyle={{ height: "700px" }}
         footer={null}
       >
-        <ResourceSubmissionForm user_id={"1"} user_name={"Neo"} />
+        <ResourceSubmissionForm user_name={currentAcitveUser} />
       </Modal>
     </>
   );
