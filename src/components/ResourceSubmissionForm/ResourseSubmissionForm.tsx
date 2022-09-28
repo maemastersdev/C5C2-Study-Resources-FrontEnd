@@ -12,8 +12,7 @@ import serverUrl from "../../utils/serverUrl";
 import { AlertBanner } from "../index";
 
 const ResourceSubmissionForm = ({
-  user_id,
-  user_name,
+  user_name
 }: IResourceSubmissionForm): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
@@ -27,7 +26,6 @@ const ResourceSubmissionForm = ({
           resource_name: resourceName,
           author_name: author,
           url: URL,
-          user_id: user_id,
           user_name: user_name,
           thumbnail: thumbnail,
           review: review,

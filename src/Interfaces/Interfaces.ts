@@ -20,6 +20,7 @@ export interface ITagsArray {
 }
 
 export interface IUserName {
+  user_id: string;
   user_name: string;
 }
 
@@ -33,6 +34,5 @@ export interface IPageHeader {
 }
 
 export interface IResourceSubmissionForm {
-  user_id: string;
   user_name: string;
 }
