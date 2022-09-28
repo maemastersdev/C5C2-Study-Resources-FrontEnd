@@ -8,11 +8,15 @@ import "./BaseModal.css";
 interface IBaseModal {
   currentAcitveUser: string;
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
+  postTagsArray : string[];
+  setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const BaseModal = ({
   currentAcitveUser,
   setCurrentActiveUser,
+  postTagsArray,
+  setPostTagsArray
 }: IBaseModal): JSX.Element => {
   const [open, setOpen] = useState(false);
 
@@ -60,6 +64,8 @@ const BaseModal = ({
         <ResourceSubmissionForm
           user_name={currentAcitveUser}
           setOpen={setOpen}
+          postTagsArray={postTagsArray}
+          setPostTagsArray={setPostTagsArray}
         />
       </Modal>
     </>

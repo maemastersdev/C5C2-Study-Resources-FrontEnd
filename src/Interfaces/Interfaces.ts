@@ -31,9 +31,13 @@ export interface IPageHeader {
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
   tagsArray: string[];
   setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
+  postTagsArray : string[];
+  setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export interface IResourceSubmissionForm {
   user_name: string;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  postTagsArray : string[];
+  setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
 }

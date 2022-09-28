@@ -15,6 +15,7 @@ function App(): JSX.Element {
   const [filterSearchTerm, setFilterSearchTerm] = useState("");
   const [currentActiveUser, setCurrentActiveUser] = useState("");
   const [tagsArray, setTagsArray] = useState<string[]>([]);
+  const [postTagsArray, setPostTagsArray] = useState<string[]>([]);
 
   return (
     <>
@@ -25,6 +26,8 @@ function App(): JSX.Element {
         setCurrentActiveUser={setCurrentActiveUser}
         tagsArray={tagsArray}
         setTagsArray={setTagsArray}
+        postTagsArray={postTagsArray}
+        setPostTagsArray={setPostTagsArray}
       />
       <Grid />
     </>

@@ -12,6 +12,8 @@ const PageHeader = ({
   setCurrentActiveUser,
   tagsArray,
   setTagsArray,
+  postTagsArray,
+  setPostTagsArray
 }: IPageHeader): JSX.Element => {
   return (
     <>
@@ -150,6 +152,8 @@ const PageHeader = ({
         <BaseModal
           currentAcitveUser={currentActiveUser}
           setCurrentActiveUser={setCurrentActiveUser}
+          postTagsArray={postTagsArray}
+          setPostTagsArray={setPostTagsArray}
         />
       </div>
     </>

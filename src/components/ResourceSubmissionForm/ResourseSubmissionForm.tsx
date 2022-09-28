@@ -9,11 +9,13 @@ import { IResourceSubmissionForm } from "../../Interfaces/Interfaces";
 import imageUrlChecker from "../../utils/imageUrlChecker";
 import serverUrl from "../../utils/serverUrl";
 
-import { AlertBanner } from "../index";
+import { AlertBanner} from "../index";
 
 const ResourceSubmissionForm = ({
   user_name,
   setOpen,
+  postTagsArray,
+  setPostTagsArray
 }: IResourceSubmissionForm): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
