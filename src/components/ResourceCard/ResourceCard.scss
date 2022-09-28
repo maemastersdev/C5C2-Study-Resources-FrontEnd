@@ -16,7 +16,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  color: rgba(240, 46, 46, 0.9);
+  color: rgba(0, 0, 0, 1);
   font-size: 20px;
   white-space: nowrap;
 }
@@ -56,6 +56,10 @@ body {
 
       .user_name {
         opacity: 1;
+        font-style: italic !important;
+        font-size: 1rem !important;
+        text-align: center;
+      
       }
     }
 

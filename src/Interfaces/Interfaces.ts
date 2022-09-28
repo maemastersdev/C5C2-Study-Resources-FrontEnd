@@ -5,7 +5,7 @@ export interface IResourceArray {
   url?: string;
   content_type?: string;
   learning_stage?: number;
-  date?: string;
+  date: string;
   user_id: string;
   user_name?: string;
   review?: string;
@@ -30,4 +30,9 @@ export interface IPageHeader {
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
   tagsArray: string[];
   setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export interface IResourceSubmissionForm{
+  user_id : string,
+  user_name : string
 }

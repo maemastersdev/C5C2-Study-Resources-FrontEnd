@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./ResourceSubmissionForm.scss";
 
-import { IResourceArray } from "../../Interfaces/Interfaces";
+import {IResourceSubmissionForm } from "../../Interfaces/Interfaces";
 
 import imageUrlChecker from "../../utils/imageUrlChecker";
 import serverUrl from "../../utils/serverUrl";
@@ -14,7 +14,7 @@ import { AlertBanner } from "../index";
 const ResourceSubmissionForm = ({
   user_id,
   user_name,
-}: IResourceArray): JSX.Element => {
+}: IResourceSubmissionForm): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
   const [URL, setURL] = useState("");
