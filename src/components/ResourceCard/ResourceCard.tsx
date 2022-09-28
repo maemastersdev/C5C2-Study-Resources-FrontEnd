@@ -8,6 +8,7 @@ import { IResourceArray, ITagsArray } from "../../Interfaces/Interfaces";
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 import getRandomProperty from "../../utils/getRandomPropery";
+import formatDate from "../../utils/dateFormatting";
 
 const ResourceCard = ({
   resource_id,
@@ -18,6 +19,7 @@ const ResourceCard = ({
   thumbnail,
   user_id,
   user_name,
+  date,
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
@@ -47,7 +49,11 @@ const ResourceCard = ({
               alt="thumbnail"
             />
             <div>
-              <b className="user_name">Posted by {user_name}</b>
+              <b className="user_name">
+                Posted by {user_name}
+                <br />
+                {formatDate(date)}
+              </b>
             </div>
           </a>
         </div>
