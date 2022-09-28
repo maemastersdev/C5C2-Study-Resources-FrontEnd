@@ -32,7 +32,7 @@ export interface IPageHeader {
   setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-export interface IResourceSubmissionForm{
-  user_id : string,
-  user_name : string
+export interface IResourceSubmissionForm {
+  user_id: string;
+  user_name: string;
 }

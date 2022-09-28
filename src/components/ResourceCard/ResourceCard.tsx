@@ -19,7 +19,7 @@ const ResourceCard = ({
   thumbnail,
   user_id,
   user_name,
-  date
+  date,
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
@@ -49,8 +49,9 @@ const ResourceCard = ({
               alt="thumbnail"
             />
             <div>
-              <b className="user_name">Posted by {user_name}
-              <br/>
+              <b className="user_name">
+                Posted by {user_name}
+                <br />
                 {formatDate(date)}
               </b>
             </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 
 import "./ResourceSubmissionForm.scss";
 
-import {IResourceSubmissionForm } from "../../Interfaces/Interfaces";
+import { IResourceSubmissionForm } from "../../Interfaces/Interfaces";
 
 import imageUrlChecker from "../../utils/imageUrlChecker";
 import serverUrl from "../../utils/serverUrl";
