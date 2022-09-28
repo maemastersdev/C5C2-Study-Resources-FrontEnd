@@ -1,6 +1,7 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmissionForm";
+import SignIn from "../SignIn/SignInComponent";
 
 import "./BaseModal.css";
 
@@ -22,21 +23,14 @@ const BaseModal = ({
     console.log("You have been logged out");
   };
 
-  const LogInUser = () => {
-    setCurrentActiveUser("Neo");
-    console.log("You have been been logged In");
-  };
-
   return (
     <>
       {!ShowUtilities ? (
-        <button
-          className="glow-on-hover"
-          type="button"
-          onClick={() => LogInUser()}
-        >
-          Log In
-        </button>
+        // add SignInComponent
+        <SignIn
+          currentActiveUser={currentAcitveUser}
+          setCurrentActiveUser={setCurrentActiveUser}
+        />
       ) : (
         <>
           <button
