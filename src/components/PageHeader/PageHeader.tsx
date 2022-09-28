@@ -90,7 +90,11 @@ const PageHeader = ({
             <g></g>
             <g></g>
           </svg>
-          <h1>Study Resource App</h1>
+          <h1>
+            {currentActiveUser === ""
+              ? "Study Resources"
+              : `Welcome ${currentActiveUser}`}
+          </h1>
         </div>
         <div>
           <svg
