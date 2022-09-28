@@ -13,6 +13,7 @@ import { AlertBanner } from "../index";
 
 const ResourceSubmissionForm = ({
   user_name,
+  setOpen,
 }: IResourceSubmissionForm): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
@@ -94,9 +95,12 @@ const ResourceSubmissionForm = ({
       </Form.Group>
       <div className="submit-buttons">
         <button
-          type="submit"
+          type="button"
           className="glow-on-hover"
-          onClick={() => submitPost()}
+          onClick={() => {
+            submitPost();
+            setOpen(false);
+          }}
         >
           Submit your post
         </button>

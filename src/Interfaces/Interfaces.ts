@@ -35,4 +35,5 @@ export interface IPageHeader {
 
 export interface IResourceSubmissionForm {
   user_name: string;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
