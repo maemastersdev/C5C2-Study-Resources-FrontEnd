@@ -26,6 +26,7 @@ function App(): JSX.Element {
         tagsArray={tagsArray}
         setTagsArray={setTagsArray}
       />
+      <p> Current User: {currentActiveUser} </p>
       <Grid />
     </>
   );
