@@ -1,30 +1,24 @@
 /*--------IMPORT FROM REAT-----------------*/
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 /*--------STYLING IMPORT -----------------*/
 import "./Grid.scss";
 /*--------EXTERNAL LIBRARIES -----------------*/
 
 /*--------UTILITY FUNCTIONS -----------------*/
-// import { getAllResources } from "../../utils/index";
+import getAllResources from "../../utils/getAllResources";
 
 /*--------REACT COMPONENT-----------------*/
 import { ResourceCard } from "../index";
-import axios from "axios";
-import { IResourceArray } from "../../Interfaces/Interfaces";
-import serverUrl from "../../utils/serverUrl";
+import { IGrid } from "../../Interfaces/Interfaces";
 
-const Grid = (): JSX.Element => {
-  const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 
-  async function getAllResources(): Promise<void> {
-    const response = await axios.get(`${serverUrl}/resources`);
-    const allResources: IResourceArray[] = await response.data;
-    setResourcesArray(allResources);
-  }
+
+const Grid = ({resourcesArray, setResourcesArray} : IGrid): JSX.Element => {
+ 
 
   useEffect(() => {
-    getAllResources();
-  }, []);
+    getAllResources(setResourcesArray);
+  }, [setResourcesArray]);
 
   return (
     <div className="Wrapper">

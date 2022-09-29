@@ -24,7 +24,7 @@ const TagListSelect = ({
   tagsArray,
   setTagsArray,
 }: ITagListSelect): JSX.Element => {
-  console.log(tagsArray);
+
 
   const addTagFilter = (tag: string) => {
     const checkTagArray = tagsArray;

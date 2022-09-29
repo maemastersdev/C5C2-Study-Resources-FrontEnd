@@ -13,7 +13,8 @@ const PageHeader = ({
   tagsArray,
   setTagsArray,
   postTagsArray,
-  setPostTagsArray
+  setPostTagsArray,
+  setResourcesArray
 }: IPageHeader): JSX.Element => {
   return (
     <>
@@ -154,6 +155,7 @@ const PageHeader = ({
           setCurrentActiveUser={setCurrentActiveUser}
           postTagsArray={postTagsArray}
           setPostTagsArray={setPostTagsArray}
+          setResourcesArray={setResourcesArray}
         />
       </div>
     </>

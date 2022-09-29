@@ -1,5 +1,6 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
+import { IResourceArray } from "../../Interfaces/Interfaces";
 import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmissionForm";
 import SignIn from "../SignIn/SignInComponent";
 
@@ -10,13 +11,15 @@ interface IBaseModal {
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
   postTagsArray : string[];
   setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
+  setResourcesArray : React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
 
 const BaseModal = ({
   currentAcitveUser,
   setCurrentActiveUser,
   postTagsArray,
-  setPostTagsArray
+  setPostTagsArray,
+  setResourcesArray
 }: IBaseModal): JSX.Element => {
   const [open, setOpen] = useState(false);
 
@@ -66,6 +69,7 @@ const BaseModal = ({
           setOpen={setOpen}
           postTagsArray={postTagsArray}
           setPostTagsArray={setPostTagsArray}
+          setResourcesArray={setResourcesArray}
         />
       </Modal>
     </>

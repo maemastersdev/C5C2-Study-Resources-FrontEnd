@@ -33,6 +33,7 @@ export interface IPageHeader {
   setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
   postTagsArray : string[];
   setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
+  setResourcesArray : React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
 
 export interface IResourceSubmissionForm {
@@ -40,4 +41,11 @@ export interface IResourceSubmissionForm {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   postTagsArray : string[];
   setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
+  setResourcesArray : React.Dispatch<React.SetStateAction<IResourceArray[]>>
+}
+
+
+export interface IGrid {
+  resourcesArray : IResourceArray[],
+  setResourcesArray : React.Dispatch<React.SetStateAction<IResourceArray[]>>
 }
