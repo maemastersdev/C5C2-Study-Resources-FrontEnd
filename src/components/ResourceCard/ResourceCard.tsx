@@ -15,9 +15,9 @@ const ResourceCard = ({
   resource_name,
   review,
   url,
+  content_type,
   author_name,
   thumbnail,
-  user_id,
   user_name,
   date,
 }: IResourceArray): JSX.Element => {
@@ -62,7 +62,9 @@ const ResourceCard = ({
 
         <div className="body_post">
           <div className="post_content">
-            <b>{resource_name}:</b>
+            <b>
+              {resource_name}({content_type}):
+            </b>
             <p>{review}</p>
 
             <div className="container_infos">
@@ -75,9 +77,6 @@ const ResourceCard = ({
                     </ul>
                   ))}
                 </ul>
-              </div>
-              <div className="content__list">
-                <b>Content:</b>
               </div>
             </div>
           </div>

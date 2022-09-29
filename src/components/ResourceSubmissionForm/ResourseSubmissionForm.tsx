@@ -42,6 +42,7 @@ const ResourceSubmissionForm = ({
           thumbnail: thumbnail,
           review: review,
           tags_array: postTagsList,
+          content_type: contentType,
         })
       : console.log("correct your submission");
   };

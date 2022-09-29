@@ -26,6 +26,7 @@ const Grid = ({ resourcesArray, setResourcesArray }: IGrid): JSX.Element => {
             resource_name={item.resource_name}
             review={item.review}
             url={item.url}
+            content_type={item.content_type}
             author_name={item.author_name}
             thumbnail={item.thumbnail}
             user_id={item.user_id}
