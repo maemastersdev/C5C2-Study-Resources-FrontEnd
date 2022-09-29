@@ -153,7 +153,9 @@ const PageHeader = ({
         <BaseModal
           currentAcitveUser={currentActiveUser}
           setCurrentActiveUser={setCurrentActiveUser}
+          tagsArray={tagsArray}
           postTagsArray={postTagsArray}
+          filterSearchTerm={filterSearchTerm}
           setPostTagsArray={setPostTagsArray}
           setResourcesArray={setResourcesArray}
         />

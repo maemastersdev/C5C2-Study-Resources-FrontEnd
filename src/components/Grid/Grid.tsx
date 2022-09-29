@@ -10,11 +10,20 @@ import getAllResources from "../../utils/getAllResources";
 /*--------REACT COMPONENT-----------------*/
 import { ResourceCard } from "../index";
 import { IGrid } from "../../Interfaces/Interfaces";
+import filterGridByTags from "../../utils/filterGridByTags";
 
-const Grid = ({ resourcesArray, setResourcesArray }: IGrid): JSX.Element => {
+const Grid = ({
+  resourcesArray,
+  setResourcesArray,
+  tagsArray,
+  filterSearchTerm,
+}: IGrid): JSX.Element => {
   useEffect(() => {
-    getAllResources(setResourcesArray);
-  }, [setResourcesArray]);
+    filterGridByTags(resourcesArray, tagsArray);
+
+    getAllResources(setResourcesArray, tagsArray, filterSearchTerm);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tagsArray, filterSearchTerm]);
 
   return (
     <div className="Wrapper">

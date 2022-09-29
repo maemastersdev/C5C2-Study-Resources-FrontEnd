@@ -40,6 +40,8 @@ export interface IResourceSubmissionForm {
   user_name: string;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   postTagsArray: string[];
+  tagsArray: string[];
+  filterSearchTerm: string;
   setPostTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
@@ -47,4 +49,6 @@ export interface IResourceSubmissionForm {
 export interface IGrid {
   resourcesArray: IResourceArray[];
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
+  tagsArray: string[];
+  filterSearchTerm: string;
 }

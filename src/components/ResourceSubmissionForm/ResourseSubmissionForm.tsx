@@ -18,6 +18,8 @@ const ResourceSubmissionForm = ({
   user_name,
   setOpen,
   postTagsArray,
+  tagsArray,
+  filterSearchTerm,
   setPostTagsArray,
   setResourcesArray,
 }: IResourceSubmissionForm): JSX.Element => {
@@ -118,7 +120,7 @@ const ResourceSubmissionForm = ({
           onClick={async () => {
             submitPost();
             setOpen(false);
-            getAllResources(setResourcesArray);
+            getAllResources(setResourcesArray, tagsArray, filterSearchTerm);
           }}
         >
           Submit your post

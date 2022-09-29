@@ -19,7 +19,8 @@ function App(): JSX.Element {
   const [postTagsArray, setPostTagsArray] = useState<string[]>([]);
   const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 
-  console.log(postTagsArray);
+  console.log("The user is currently searching for :", filterSearchTerm);
+  console.log("The current tag filters are :", tagsArray);
 
   return (
     <>
@@ -37,6 +38,8 @@ function App(): JSX.Element {
       <Grid
         resourcesArray={resourcesArray}
         setResourcesArray={setResourcesArray}
+        tagsArray={tagsArray}
+        filterSearchTerm={filterSearchTerm}
       />
     </>
   );

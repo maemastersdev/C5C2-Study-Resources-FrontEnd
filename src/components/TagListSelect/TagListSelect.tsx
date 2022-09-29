@@ -4,15 +4,21 @@ import "./TagListSelect.scss";
 const TagOptions = [
   "React",
   "TypeScript",
+  "JavaScript",
   "SQL",
   "Node.js",
   "CSS",
   "Testing",
-  "Other",
   "UI",
   "UX",
   "Frontend",
   "Backend",
+  "AI",
+  "Art",
+  "Creative",
+  "Fun",
+  "Technology",
+  "Other",
 ];
 
 interface ITagListSelect {

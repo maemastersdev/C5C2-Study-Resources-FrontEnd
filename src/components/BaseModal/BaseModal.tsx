@@ -10,6 +10,8 @@ interface IBaseModal {
   currentAcitveUser: string;
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
   postTagsArray: string[];
+  tagsArray: string[];
+  filterSearchTerm: string;
   setPostTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
@@ -17,7 +19,9 @@ interface IBaseModal {
 const BaseModal = ({
   currentAcitveUser,
   setCurrentActiveUser,
+  tagsArray,
   postTagsArray,
+  filterSearchTerm,
   setPostTagsArray,
   setResourcesArray,
 }: IBaseModal): JSX.Element => {
@@ -68,6 +72,8 @@ const BaseModal = ({
           user_name={currentAcitveUser}
           setOpen={setOpen}
           postTagsArray={postTagsArray}
+          tagsArray={tagsArray}
+          filterSearchTerm={filterSearchTerm}
           setPostTagsArray={setPostTagsArray}
           setResourcesArray={setResourcesArray}
         />

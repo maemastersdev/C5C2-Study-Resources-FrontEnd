@@ -6,15 +6,21 @@ const { Option } = Select;
 const tagsArray = [
   "React",
   "TypeScript",
+  "JavaScript",
   "SQL",
   "Node.js",
   "CSS",
   "Testing",
-  "Other",
   "UI",
   "UX",
   "Frontend",
   "Backend",
+  "AI",
+  "Art",
+  "Creative",
+  "Fun",
+  "Technology",
+  "Other",
 ];
 
 const children: React.ReactNode[] = [];
