@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap");
 
-
 * {
   margin: 0px;
   padding: 0;
@@ -30,9 +29,9 @@ body {
   justify-content: center;
   align-items: center;
   // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  box-shadow: rgba(100, 0, 88, 0.4) -5px 5px,
-    rgba(198, 40, 200, 0.3) -10px 10px, rgba(124, 7, 137, 0.2) -15px 15px,
-    rgba(37, 12, 37, 0.1) -20px 20px, rgba(70, 42, 70, 0.05) -25px 25px;
+  box-shadow: rgba(100, 0, 88, 0.4) -5px 5px, rgba(198, 40, 200, 0.3) -10px 10px,
+    rgba(124, 7, 137, 0.2) -15px 15px, rgba(37, 12, 37, 0.1) -20px 20px,
+    rgba(70, 42, 70, 0.05) -25px 25px;
 
   .post {
     width: 100%;
@@ -41,7 +40,6 @@ body {
     overflow: hidden;
     flex-direction: column;
     position: relative;
-
 
     &:hover {
       .header_post {
@@ -125,17 +123,16 @@ body {
           border-radius: 1px;
 
           .tags__list {
-
             ul {
               display: inline;
-              padding-left:  7px;
+              padding-left: 7px;
               word-wrap: break-word;
               font-style: italic;
             }
             font-size: 12px;
           }
 
-          .content__list{
+          .content__list {
             font-size: 12px;
           }
         }
@@ -143,7 +140,6 @@ body {
     }
   }
 }
-
 
 @keyframes top {
   0% {

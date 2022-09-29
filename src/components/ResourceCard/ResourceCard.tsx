@@ -53,7 +53,7 @@ const ResourceCard = ({
                 Posted by {user_name}
                 <br />
                 {formatDate(date)}
-                <br/>
+                <br />
                 {`Author: ${author_name}`}
               </b>
             </div>
@@ -68,14 +68,16 @@ const ResourceCard = ({
             <div className="container_infos">
               <div className="tags__list">
                 <b>Tags:</b>
-                  <ul>
-                    {tagsList.map((tag) => (
-                      <ul key={tag.unique_tag_id}><b>{tag.tag} |</b></ul>
-                    ))}
-                  </ul>
+                <ul>
+                  {tagsList.map((tag) => (
+                    <ul key={tag.unique_tag_id}>
+                      <b>{tag.tag} |</b>
+                    </ul>
+                  ))}
+                </ul>
               </div>
               <div className="content__list">
-              <b>Content:</b>
+                <b>Content:</b>
               </div>
             </div>
           </div>

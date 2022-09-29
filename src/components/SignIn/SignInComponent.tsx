@@ -2,7 +2,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import './SignInComponent.scss'
+import "./SignInComponent.scss";
 
 /*--------REACT COMPONENT-----------------*/
 import { IUserName } from "../../Interfaces/Interfaces";
@@ -38,23 +38,22 @@ export default function SignIn({
 
   return (
     <button className="glow-on-hover-log">
-       <select className="glow-on-hover-log"
-      name="username"
-      id="user-dropdown"
-      onChange={LogInUser}
-      value={currentActiveUser}
-    >
-      <option value=""> Select User </option>
-      {usersArray.map((user) => {
-        return (
-          <option key={user.user_name} value={user.user_name}>
-            {user.user_name}
-          </option>
-        );
-      })}
-    </select>
-
+      <select
+        className="glow-on-hover-log"
+        name="username"
+        id="user-dropdown"
+        onChange={LogInUser}
+        value={currentActiveUser}
+      >
+        <option value=""> Select User </option>
+        {usersArray.map((user) => {
+          return (
+            <option key={user.user_name} value={user.user_name}>
+              {user.user_name}
+            </option>
+          );
+        })}
+      </select>
     </button>
-   
   );
 }
