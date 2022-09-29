@@ -63,7 +63,7 @@ const ResourceCard = ({
         <div className="body_post">
           <div className="post_content">
             <b>
-              {resource_name}({content_type}):
+              {resource_name} ({content_type}) :
             </b>
             <p>{review}</p>
 
