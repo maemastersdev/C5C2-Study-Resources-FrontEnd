@@ -12,6 +12,7 @@ import serverUrl from "../../utils/serverUrl";
 import { AlertBanner } from "../index";
 import getAllResources from "../../utils/getAllResources";
 import FormTagSelector from "../FormTagSelector/FormTagSelector";
+import FormContentSelector from "../FormContentSelector/FormContentSelector";
 
 const ResourceSubmissionForm = ({
   user_name,
@@ -26,8 +27,10 @@ const ResourceSubmissionForm = ({
   const [thumbnail, setThumbnail] = useState("");
   const [review, setReview] = useState("");
   const [postTagsList, setPostTagsList] = useState<string[]>([]);
+  const [contentType, setContentType] = useState("");
 
   console.log(postTagsList);
+  console.log(contentType);
 
   const submitPost = async () => {
     resourceName && URL && review && imageUrlChecker(thumbnail)
@@ -96,6 +99,7 @@ const ResourceSubmissionForm = ({
         postTagsList={postTagsList}
         setPostTagsList={setPostTagsList}
       />
+      <FormContentSelector setContentType={setContentType} />
       <Form.Group className="mb-3 " controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
         <Form.Control

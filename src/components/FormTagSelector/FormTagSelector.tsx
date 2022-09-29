@@ -22,8 +22,9 @@ for (const item of tagsArray) {
   children.push(<Option key={item}>{item}</Option>);
 }
 const handleChange = (value: string) => {
-  //   console.log(`selected ${value}`);
+  // console.log(`selected ${value}`);
 };
+
 interface IFormTagSelector {
   postTagsList: string[];
   setPostTagsList: React.Dispatch<React.SetStateAction<string[]>>;
@@ -35,7 +36,6 @@ const FormTagSelector = ({
 }: IFormTagSelector): JSX.Element => {
   const updatePostTags = (value: string): void => {
     setPostTagsList([...postTagsList, value]);
-
     return;
   };
 

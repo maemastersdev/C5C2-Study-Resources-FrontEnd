@@ -19,6 +19,8 @@ function App(): JSX.Element {
   const [postTagsArray, setPostTagsArray] = useState<string[]>([]);
   const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 
+  console.log(postTagsArray);
+
   return (
     <>
       <PageHeader
