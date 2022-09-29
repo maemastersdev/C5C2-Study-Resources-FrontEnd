@@ -53,6 +53,8 @@ const ResourceCard = ({
                 Posted by {user_name}
                 <br />
                 {formatDate(date)}
+                <br/>
+                {`Author: ${author_name}`}
               </b>
             </div>
           </a>
@@ -60,23 +62,20 @@ const ResourceCard = ({
 
         <div className="body_post">
           <div className="post_content">
-            <h1>{resource_name}:</h1>
+            <b>{resource_name}:</b>
             <p>{review}</p>
 
             <div className="container_infos">
-              <div className="postedBy">
-                <span>author</span>
-                {author_name}
-              </div>
-              <div className="container_tags">
-                <span>tags</span>
-                <div className="tags">
+              <div className="tags__list">
+                <b>Tags:</b>
                   <ul>
                     {tagsList.map((tag) => (
-                      <li key={tag.unique_tag_id}>{tag.tag}</li>
+                      <ul key={tag.unique_tag_id}><b>{tag.tag} |</b></ul>
                     ))}
                   </ul>
-                </div>
+              </div>
+              <div className="content__list">
+              <b>Content:</b>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import './SignInComponent.scss'
 
 /*--------REACT COMPONENT-----------------*/
 import { IUserName } from "../../Interfaces/Interfaces";
@@ -36,7 +37,8 @@ export default function SignIn({
   };
 
   return (
-    <select
+    <button className="glow-on-hover-log">
+       <select className="glow-on-hover-log"
       name="username"
       id="user-dropdown"
       onChange={LogInUser}
@@ -51,5 +53,8 @@ export default function SignIn({
         );
       })}
     </select>
+
+    </button>
+   
   );
 }
