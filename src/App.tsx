@@ -32,7 +32,10 @@ function App(): JSX.Element {
         setPostTagsArray={setPostTagsArray}
         setResourcesArray={setResourcesArray}
       />
-      <Grid resourcesArray={resourcesArray} setResourcesArray={setResourcesArray} />
+      <Grid
+        resourcesArray={resourcesArray}
+        setResourcesArray={setResourcesArray}
+      />
     </>
   );
 }

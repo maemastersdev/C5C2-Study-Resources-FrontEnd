@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ import { IResourceSubmissionForm } from "../../Interfaces/Interfaces";
 import imageUrlChecker from "../../utils/imageUrlChecker";
 import serverUrl from "../../utils/serverUrl";
 
-import { AlertBanner} from "../index";
+import { AlertBanner } from "../index";
 import getAllResources from "../../utils/getAllResources";
 import FormTagSelector from "../FormTagSelector/FormTagSelector";
 
@@ -18,14 +18,14 @@ const ResourceSubmissionForm = ({
   setOpen,
   postTagsArray,
   setPostTagsArray,
-  setResourcesArray
+  setResourcesArray,
 }: IResourceSubmissionForm): JSX.Element => {
   const [resourceName, setResourceName] = useState("");
   const [author, setAuthor] = useState("");
   const [URL, setURL] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [review, setReview] = useState("");
-  const [postTagsList, setPostTagsList] =useState<string[]>([]);
+  const [postTagsList, setPostTagsList] = useState<string[]>([]);
 
   console.log(postTagsList);
 
@@ -38,7 +38,7 @@ const ResourceSubmissionForm = ({
           user_name: user_name,
           thumbnail: thumbnail,
           review: review,
-          tags_array : postTagsList
+          tags_array: postTagsList,
         })
       : console.log("correct your submission");
   };
@@ -92,7 +92,10 @@ const ResourceSubmissionForm = ({
         />
       </Form.Group>
       <Form.Label>Choose Tags</Form.Label>
-      <FormTagSelector postTagsList={postTagsList} setPostTagsList={setPostTagsList}/>
+      <FormTagSelector
+        postTagsList={postTagsList}
+        setPostTagsList={setPostTagsList}
+      />
       <Form.Group className="mb-3 " controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
         <Form.Control
@@ -107,7 +110,7 @@ const ResourceSubmissionForm = ({
         <button
           type="button"
           className="glow-on-hover"
-          onClick={ async () => {
+          onClick={async () => {
             submitPost();
             setOpen(false);
             getAllResources(setResourcesArray);

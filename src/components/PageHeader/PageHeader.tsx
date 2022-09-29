@@ -14,7 +14,7 @@ const PageHeader = ({
   setTagsArray,
   postTagsArray,
   setPostTagsArray,
-  setResourcesArray
+  setResourcesArray,
 }: IPageHeader): JSX.Element => {
   return (
     <>

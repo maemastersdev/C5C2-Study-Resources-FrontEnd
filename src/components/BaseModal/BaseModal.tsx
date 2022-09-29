@@ -9,9 +9,9 @@ import "./BaseModal.css";
 interface IBaseModal {
   currentAcitveUser: string;
   setCurrentActiveUser: React.Dispatch<React.SetStateAction<string>>;
-  postTagsArray : string[];
-  setPostTagsArray : React.Dispatch<React.SetStateAction<string[]>>;
-  setResourcesArray : React.Dispatch<React.SetStateAction<IResourceArray[]>>;
+  postTagsArray: string[];
+  setPostTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
+  setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
 
 const BaseModal = ({
@@ -19,7 +19,7 @@ const BaseModal = ({
   setCurrentActiveUser,
   postTagsArray,
   setPostTagsArray,
-  setResourcesArray
+  setResourcesArray,
 }: IBaseModal): JSX.Element => {
   const [open, setOpen] = useState(false);
 

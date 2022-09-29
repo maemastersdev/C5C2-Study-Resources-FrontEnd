@@ -1,5 +1,5 @@
 /*--------IMPORT FROM REAT-----------------*/
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 /*--------STYLING IMPORT -----------------*/
 import "./Grid.scss";
 /*--------EXTERNAL LIBRARIES -----------------*/
@@ -11,11 +11,7 @@ import getAllResources from "../../utils/getAllResources";
 import { ResourceCard } from "../index";
 import { IGrid } from "../../Interfaces/Interfaces";
 
-
-
-const Grid = ({resourcesArray, setResourcesArray} : IGrid): JSX.Element => {
- 
-
+const Grid = ({ resourcesArray, setResourcesArray }: IGrid): JSX.Element => {
   useEffect(() => {
     getAllResources(setResourcesArray);
   }, [setResourcesArray]);
