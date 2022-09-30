@@ -6,3 +6,4 @@ export { default as AlertBanner } from "./AlertBanner/AlertBanner";
 export { default as SearchBar } from "./SearchBar/SearchBar";
 export { default as TagListSelect } from "./TagListSelect/TagListSelect";
 export { default as FormCotentSelector } from "./FormContentSelector/FormContentSelector";
+export {default as GenericModal} from "./GenericModal/GenericModal"
