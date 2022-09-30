@@ -15,7 +15,7 @@ import getRandomProperty from "../../utils/getRandomPropery";
 import formatDate from "../../utils/dateFormatting";
 import GenericModal from "../GenericModal/GenericModal";
 
-import { CommentListings } from "../index";
+import { CommentListings, PostComment } from "../index";
 
 const ResourceCard = ({
   resource_id,
@@ -102,6 +102,7 @@ const ResourceCard = ({
             <CommentListings resourceComments={resourceComments}>
               {/* Gonna put the child map here */}
             </CommentListings>
+            <PostComment/>
           </GenericModal>
         </div>
       </div>

@@ -1,6 +1,9 @@
 import { Comment, List, Tooltip } from "antd";
 import React from "react";
 import { IComment } from "../../Interfaces/Interfaces";
+import moment from "moment";
+
+
 
 interface ICommentListings {
   resourceComments: IComment[];
@@ -15,18 +18,19 @@ const CommentListings = ({
   const commentArray = resourceComments.map((item) => {
     return {
       author: item.user_name,
-      avatar: "https://cdn-icons-png.flaticon.com/512/1045/1045191.png",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpEaVa7EHgQCm4KI7JDt7DVwgI5O-L8smRg&usqp=CAU",
       content: <p>{item.comment}</p>,
       datetime: (
-        <Tooltip title="2016-11-22 11:22:33">
-          <span>{item.date}</span>
+        <Tooltip title= {item.date} >
+          <span>{moment(item.date).fromNow()}</span>
         </Tooltip>
       ),
     };
   });
 
   return (
-    <List
+    <div className="comment_wrapper" style = {{height:"80%" , overflowY:"scroll"}}>
+       <List
       className="comment-list"
       header={`${commentArray.length} replies`}
       itemLayout="horizontal"
@@ -42,6 +46,9 @@ const CommentListings = ({
         </li>
       )}
     />
+
+    </div>
+   
   );
 };
 

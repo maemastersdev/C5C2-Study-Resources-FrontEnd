@@ -62,7 +62,7 @@ const PostComment = (): JSX.Element => {
         ...comments,
         {
           author: "Han Solo",
-          avatar: "https://joeschmoe.io/api/v1/random",
+          avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpEaVa7EHgQCm4KI7JDt7DVwgI5O-L8smRg&usqp=CAU",
           content: <p>{value}</p>,
           datetime: moment("2016-11-22").fromNow(),
         },
@@ -79,7 +79,7 @@ const PostComment = (): JSX.Element => {
       {comments.length > 0 && <CommentList comments={comments} />}
       <Comment
         avatar={
-          <Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />
+          <Avatar src="https://cdn-icons-png.flaticon.com/512/2834/2834538.png" alt="whale icon" />
         }
         content={
           <Editor
