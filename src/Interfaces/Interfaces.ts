@@ -1,5 +1,5 @@
 export interface IResourceArray {
-  resource_id?: number;
+  resource_id: number;
   resource_name?: string;
   author_name?: string;
   url?: string;
@@ -7,10 +7,11 @@ export interface IResourceArray {
   learning_stage?: number;
   date: string;
   user_id: string;
-  user_name?: string;
+  user_name: string;
   review?: string;
   likes?: number;
   thumbnail?: string;
+  currentActiveUser: string;
 }
 
 export interface ITagsArray {
@@ -51,4 +52,13 @@ export interface IGrid {
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
   tagsArray: string[];
   filterSearchTerm: string;
+  currentActiveUser: string;
+}
+
+export interface IComment {
+  comment_id: number;
+  user_name: string;
+  resource_id: number;
+  comment: string;
+  date: string;
 }
