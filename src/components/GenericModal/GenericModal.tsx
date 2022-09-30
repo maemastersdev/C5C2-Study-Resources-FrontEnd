@@ -36,21 +36,9 @@ const GenericModal = ({ children }: IGenericModal): JSX.Element => {
         onOk={handleOk}
         onCancel={handleCancel}
         width={"50%"}
-        bodyStyle={{ height: "70vh" }}
+        bodyStyle={{ height: "80vh" }}
         style={{ top: 20 }}
-        footer={[
-          <Button key="back" onClick={handleCancel}>
-            Return
-          </Button>,
-          <Button
-            key="submit"
-            type="primary"
-            loading={loading}
-            onClick={handleOk}
-          >
-            Submit
-          </Button>,
-        ]}
+        footer={null}
       >
         {children}
       </Modal>

@@ -14,7 +14,7 @@ const CommentListings = ({
   resourceComments,
   children,
 }: ICommentListings): JSX.Element => {
-  // console.log(resourceComments)
+
   const commentArray = resourceComments.map((item) => {
     return {
       author: item.user_name,
@@ -28,8 +28,10 @@ const CommentListings = ({
     };
   });
 
+  
+
   return (
-    <div className="comment_wrapper" style = {{height:"80%" , overflowY:"scroll"}}>
+    <div className="comment_wrapper" style = {{height:"70%" , overflowY:"scroll"}}>
        <List
       className="comment-list"
       header={`${commentArray.length} replies`}
@@ -46,7 +48,6 @@ const CommentListings = ({
         </li>
       )}
     />
-
     </div>
    
   );

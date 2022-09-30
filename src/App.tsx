@@ -40,6 +40,7 @@ function App(): JSX.Element {
         setResourcesArray={setResourcesArray}
         tagsArray={tagsArray}
         filterSearchTerm={filterSearchTerm}
+        currentActiveUser={currentActiveUser}
       />
     </>
   );

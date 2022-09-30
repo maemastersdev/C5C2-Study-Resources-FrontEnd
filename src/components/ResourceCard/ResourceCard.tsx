@@ -16,6 +16,7 @@ import formatDate from "../../utils/dateFormatting";
 import GenericModal from "../GenericModal/GenericModal";
 
 import { CommentListings, PostComment } from "../index";
+import getCommentsForResources from "../../utils/getCommentsForResources";
 
 const ResourceCard = ({
   resource_id,
@@ -27,6 +28,7 @@ const ResourceCard = ({
   thumbnail,
   user_name,
   date,
+  currentActiveUser
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
@@ -39,16 +41,10 @@ const ResourceCard = ({
       setTagsList(tags);
     };
 
-    const getCommentsForResources = async (): Promise<void> => {
-      const response = await axios.get(`${serverUrl}/comments/${resource_id}`);
-      const comments: IComment[] = await response.data;
-      setResourceComments(comments);
-    };
-
     getTagsForResource();
-    getCommentsForResources();
+    getCommentsForResources(resource_id,setResourceComments);
     setRandomIndex(getRandomProperty(spacePictures));
-  }, [resource_id]);
+  }, [resource_id, setResourceComments]);
 
   return (
     <>
@@ -102,7 +98,7 @@ const ResourceCard = ({
             <CommentListings resourceComments={resourceComments}>
               {/* Gonna put the child map here */}
             </CommentListings>
-            <PostComment/>
+            {(currentActiveUser.length > 0) &&  <PostComment resource_id={resource_id} currentActiveUser={currentActiveUser} setResourceComments={setResourceComments}/>}
           </GenericModal>
         </div>
       </div>

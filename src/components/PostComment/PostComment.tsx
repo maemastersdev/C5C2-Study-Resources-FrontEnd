@@ -1,33 +1,21 @@
-import { Avatar, Button, Comment, Form, Input, List } from "antd";
-import moment from "moment";
+import { Avatar, Button, Comment, Form, Input} from "antd";
+import axios from "axios";
 import React, { useState } from "react";
+import { IComment } from "../../Interfaces/Interfaces";
+import getCommentsForResources from "../../utils/getCommentsForResources";
+import serverUrl from "../../utils/serverUrl";
 
 const { TextArea } = Input;
-
-interface CommentItem {
-  author: string;
-  avatar: string;
-  content: React.ReactNode;
-  datetime: string;
-}
 
 interface EditorProps {
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSubmit: () => void;
-  submitting: boolean;
   value: string;
+ 
 }
 
-const CommentList = ({ comments }: { comments: CommentItem[] }) => (
-  <List
-    dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? "replies" : "reply"}`}
-    itemLayout="horizontal"
-    renderItem={(props) => <Comment {...props} />}
-  />
-);
 
-const Editor = ({ onChange, onSubmit, submitting, value }: EditorProps) => (
+const Editor = ({ onChange, onSubmit, value}: EditorProps) => (
   <>
     <Form.Item>
       <TextArea rows={4} onChange={onChange} value={value} />
@@ -35,7 +23,6 @@ const Editor = ({ onChange, onSubmit, submitting, value }: EditorProps) => (
     <Form.Item>
       <Button
         htmlType="submit"
-        loading={submitting}
         onClick={onSubmit}
         type="primary"
       >
@@ -45,38 +32,39 @@ const Editor = ({ onChange, onSubmit, submitting, value }: EditorProps) => (
   </>
 );
 
-const PostComment = (): JSX.Element => {
-  const [comments, setComments] = useState<CommentItem[]>([]);
-  const [submitting, setSubmitting] = useState(false);
-  const [value, setValue] = useState("");
+interface IPostComment {
+  resource_id : number;
+  currentActiveUser : string;
+  setResourceComments : React.Dispatch<React.SetStateAction<IComment[]>>;
+}
 
-  const handleSubmit = () => {
-    if (!value) return;
+const PostComment = ({resource_id, currentActiveUser, setResourceComments} : IPostComment): JSX.Element => {
+  const [commentText, setCommentText] = useState("");
 
-    setSubmitting(true);
-
-    setTimeout(() => {
-      setSubmitting(false);
-      setValue("");
-      setComments([
-        ...comments,
-        {
-          author: "Han Solo",
-          avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpEaVa7EHgQCm4KI7JDt7DVwgI5O-L8smRg&usqp=CAU",
-          content: <p>{value}</p>,
-          datetime: moment("2016-11-22").fromNow(),
-        },
-      ]);
-    }, 1000);
+  const handleSubmit = async () : Promise<void> =>  {
+    try {
+      await axios.post(`${serverUrl}/comment`, {
+        resource_id : resource_id,
+        user_name : currentActiveUser,
+        comment : commentText
+      })
+      console.log("comment submitted")
+  
+      await getCommentsForResources(resource_id, setResourceComments)
+  
+      setCommentText("")
+      
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(e.target.value);
+    setCommentText(e.target.value);
   };
 
   return (
     <>
-      {comments.length > 0 && <CommentList comments={comments} />}
       <Comment
         avatar={
           <Avatar src="https://cdn-icons-png.flaticon.com/512/2834/2834538.png" alt="whale icon" />
@@ -85,8 +73,7 @@ const PostComment = (): JSX.Element => {
           <Editor
             onChange={handleChange}
             onSubmit={handleSubmit}
-            submitting={submitting}
-            value={value}
+            value={commentText}
           />
         }
       />
