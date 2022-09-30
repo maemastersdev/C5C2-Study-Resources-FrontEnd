@@ -11,7 +11,7 @@ export interface IResourceArray {
   review?: string;
   likes?: number;
   thumbnail?: string;
-  currentActiveUser : string;
+  currentActiveUser: string;
 }
 
 export interface ITagsArray {
@@ -52,7 +52,7 @@ export interface IGrid {
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
   tagsArray: string[];
   filterSearchTerm: string;
-  currentActiveUser : string;
+  currentActiveUser: string;
 }
 
 export interface IComment {

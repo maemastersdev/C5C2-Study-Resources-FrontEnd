@@ -6,19 +6,10 @@ interface IGenericModal {
 }
 
 const GenericModal = ({ children }: IGenericModal): JSX.Element => {
-  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
   const showModal = () => {
     setOpen(true);
-  };
-
-  const handleOk = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setOpen(false);
-    }, 3000);
   };
 
   const handleCancel = () => {
@@ -33,7 +24,6 @@ const GenericModal = ({ children }: IGenericModal): JSX.Element => {
       <Modal
         open={open}
         title="Comments"
-        onOk={handleOk}
         onCancel={handleCancel}
         width={"50%"}
         bodyStyle={{ height: "80vh" }}

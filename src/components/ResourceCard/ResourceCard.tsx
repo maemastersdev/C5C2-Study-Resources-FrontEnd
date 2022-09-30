@@ -28,7 +28,7 @@ const ResourceCard = ({
   thumbnail,
   user_name,
   date,
-  currentActiveUser
+  currentActiveUser,
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
@@ -42,7 +42,7 @@ const ResourceCard = ({
     };
 
     getTagsForResource();
-    getCommentsForResources(resource_id,setResourceComments);
+    getCommentsForResources(resource_id, setResourceComments);
     setRandomIndex(getRandomProperty(spacePictures));
   }, [resource_id, setResourceComments]);
 
@@ -98,7 +98,13 @@ const ResourceCard = ({
             <CommentListings resourceComments={resourceComments}>
               {/* Gonna put the child map here */}
             </CommentListings>
-            {(currentActiveUser.length > 0) &&  <PostComment resource_id={resource_id} currentActiveUser={currentActiveUser} setResourceComments={setResourceComments}/>}
+            {currentActiveUser.length > 0 && (
+              <PostComment
+                resource_id={resource_id}
+                currentActiveUser={currentActiveUser}
+                setResourceComments={setResourceComments}
+              />
+            )}
           </GenericModal>
         </div>
       </div>
