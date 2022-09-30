@@ -52,3 +52,11 @@ export interface IGrid {
   tagsArray: string[];
   filterSearchTerm: string;
 }
+
+export interface IComment {
+  comment_id: number;
+  user_name: string;
+  resource_id: number;
+  comment: string;
+  date: string;
+}

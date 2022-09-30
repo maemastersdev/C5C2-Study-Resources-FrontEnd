@@ -49,7 +49,6 @@ const TagListSelect = ({
       <form className="tag_container">
         {TagOptions.map((tag) => (
           <fieldset key={tag}>
-            <legend>Select what topics you're into</legend>
             <label className="control" htmlFor={tag}>
               <input
                 type="checkbox"

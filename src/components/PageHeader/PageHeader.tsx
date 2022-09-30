@@ -138,10 +138,8 @@ const PageHeader = ({
           </svg>
         </div>
       </div>
-      <div className="tag_container">
-        <div className="tag_select">
-          <TagListSelect tagsArray={tagsArray} setTagsArray={setTagsArray} />
-        </div>
+      <div className="tags_wrapper">
+        <TagListSelect tagsArray={tagsArray} setTagsArray={setTagsArray} />
       </div>
       <div className="search_content search_flex">
         <SearchBar
