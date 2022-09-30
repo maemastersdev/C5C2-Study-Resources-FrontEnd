@@ -9,6 +9,7 @@ import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 import getRandomProperty from "../../utils/getRandomPropery";
 import formatDate from "../../utils/dateFormatting";
+import GenericModal from "../GenericModal/GenericModal";
 
 const ResourceCard = ({
   resource_id,
@@ -36,7 +37,8 @@ const ResourceCard = ({
   }, [resource_id]);
 
   return (
-    <div className="container">
+    <>
+     <div className="container">
       <div className="post">
         <div className="header_post">
           <a href={url} rel="noreferrer" target="_blank">
@@ -82,7 +84,13 @@ const ResourceCard = ({
           </div>
         </div>
       </div>
+      <div className="comment_container" >
+        <GenericModal/>
+      </div>
     </div>
+    </>
+   
+    
   );
 };
 
