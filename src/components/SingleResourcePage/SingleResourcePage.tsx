@@ -12,7 +12,6 @@ import { MdLaunch } from "react-icons/md";
 
 import "./SingleResourcePage.css";
 
-
 const blankPage = {
   resource_id: 404,
   resource_name: "Nothing Found",
@@ -33,10 +32,7 @@ const SingleResourcePage = (): JSX.Element => {
   const [resourceComments, setResourceComments] = useState<IComment[]>([]);
   const { resourceId } = useParams();
 
-  
-
   useEffect(() => {
-
     const data = window.localStorage.getItem("CURRENT_USER");
     if (data !== null) setCurrentActiveUser(JSON.parse(data));
 
@@ -91,20 +87,20 @@ const SingleResourcePage = (): JSX.Element => {
               <AiOutlineHome />
             </button>
             {currentActiveUser.length > 0 && (
-                <>
+              <>
                 <GenericModal>
-                <CommentListings resourceComments={resourceComments}>
-                  {/* Gonna put the child map here */}
-                </CommentListings>
-                {currentActiveUser.length > 0 && (
-                  <PostComment
-                    resource_id={Number(resourceId)}
-                    currentActiveUser={currentActiveUser}
-                    setResourceComments={setResourceComments}
-                  />
-                )}
-              </GenericModal>
-                </>
+                  <CommentListings resourceComments={resourceComments}>
+                    {/* Gonna put the child map here */}
+                  </CommentListings>
+                  {currentActiveUser.length > 0 && (
+                    <PostComment
+                      resource_id={Number(resourceId)}
+                      currentActiveUser={currentActiveUser}
+                      setResourceComments={setResourceComments}
+                    />
+                  )}
+                </GenericModal>
+              </>
             )}
           </div>
         </div>
