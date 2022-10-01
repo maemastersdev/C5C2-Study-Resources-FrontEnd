@@ -74,10 +74,9 @@ const ResourceCard = ({
           <div className="body_post">
             <div className="post_content">
               <b>
-                {resource_name} ({content_type}) :
+                {resource_name} ({content_type}):
               </b>
               <p>{review}</p>
-
               <div className="container_infos">
                 <div className="tags__list">
                   <b>Tags:</b>
@@ -92,8 +91,6 @@ const ResourceCard = ({
               </div>
             </div>
           </div>
-        </div>
-        <div className="comment_container">
           <GenericModal>
             <CommentListings resourceComments={resourceComments}>
               {/* Gonna put the child map here */}
