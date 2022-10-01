@@ -1,4 +1,4 @@
-import { Avatar, Button, Comment, Form, Input } from "antd";
+import { Avatar, Comment, Form, Input } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
 import { IComment } from "../../Interfaces/Interfaces";

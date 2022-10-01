@@ -65,7 +65,7 @@ const BaseModal = ({
         open={open}
         onCancel={() => setOpen(false)}
         width={1000}
-        bodyStyle={{ height: "700px"}}
+        bodyStyle={{ height: "700px" }}
         footer={null}
       >
         <ResourceSubmissionForm
