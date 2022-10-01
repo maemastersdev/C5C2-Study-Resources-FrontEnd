@@ -19,9 +19,12 @@ const Grid = ({
   filterSearchTerm,
   currentActiveUser,
 }: IGrid): JSX.Element => {
+
+  
+
+
   useEffect(() => {
     filterGridByTags(resourcesArray, tagsArray);
-
     getAllResources(setResourcesArray, tagsArray, filterSearchTerm);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tagsArray, filterSearchTerm]);
