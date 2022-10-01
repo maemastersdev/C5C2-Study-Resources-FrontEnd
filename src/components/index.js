@@ -9,3 +9,6 @@ export { default as FormCotentSelector } from "./FormContentSelector/FormContent
 export { default as GenericModal } from "./GenericModal/GenericModal";
 export { default as CommentListings } from "./CommentListings/CommentListings";
 export { default as PostComment } from "./PostComment/PostComment";
+export { default as PageHeader } from "./PageHeader/PageHeader";
+export { default as Home } from "./Home/Home";
+export { default as SingleResourcePage } from "./SingleResourcePage/SingleResourcePage";

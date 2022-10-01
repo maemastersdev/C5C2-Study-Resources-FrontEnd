@@ -15,6 +15,20 @@ export interface IResourceArray {
   setTagsArray?: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+export interface singleResource {
+  resource_id: number;
+  resource_name: string;
+  author_name: string;
+  url: string;
+  content_type: string;
+  learning_stage: string;
+  date: string;
+  user_name: string;
+  review: string;
+  thumbnail: string;
+  likes: number;
+}
+
 export interface ITagsArray {
   unique_tag_id?: number;
   resource_id?: number;
