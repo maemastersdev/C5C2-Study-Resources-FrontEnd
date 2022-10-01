@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Grid, PageHeader } from "../index";
 import { IResourceArray } from "../../Interfaces/Interfaces";
 
-
 function Home(): JSX.Element {
   const [filterSearchTerm, setFilterSearchTerm] = useState("");
   const [currentActiveUser, setCurrentActiveUser] = useState("");
