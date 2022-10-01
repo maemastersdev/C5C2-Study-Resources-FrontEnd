@@ -18,7 +18,7 @@ import GenericModal from "../GenericModal/GenericModal";
 import { CommentListings, PostComment } from "../index";
 import getCommentsForResources from "../../utils/getCommentsForResources";
 
-import {VscExpandAll} from 'react-icons/vsc'
+import { VscExpandAll } from "react-icons/vsc";
 
 const ResourceCard = ({
   resource_id,
@@ -106,12 +106,12 @@ const ResourceCard = ({
               />
             )}
           </GenericModal>
-          <button 
-          className="glow-on-hover" 
-          style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
-          onClick={() => window.open(`/study/${resource_id}`, "_blank")}
+          <button
+            className="glow-on-hover"
+            style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
+            onClick={() => window.open(`/study/${resource_id}`, "_blank")}
           >
-              <VscExpandAll/>
+            <VscExpandAll />
           </button>
         </div>
       </div>
