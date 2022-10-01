@@ -109,7 +109,9 @@ const ResourceCard = ({
           <button
             className="glow-on-hover"
             style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
-            onClick={() => window.open(`/study/${resource_id}`, "_blank")}
+            onClick={() =>
+              window.open(`${serverUrl}/study/${resource_id}`, "_blank")
+            }
           >
             <VscExpandAll />
           </button>
