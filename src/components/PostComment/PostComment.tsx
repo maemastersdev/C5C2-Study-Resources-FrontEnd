@@ -1,4 +1,4 @@
-import { Avatar, Button, Comment, Form, Input } from "antd";
+import { Avatar, Comment, Form, Input } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
 import { IComment } from "../../Interfaces/Interfaces";
@@ -19,9 +19,9 @@ const Editor = ({ onChange, onSubmit, value }: EditorProps) => (
       <TextArea rows={4} onChange={onChange} value={value} />
     </Form.Item>
     <Form.Item>
-      <Button htmlType="submit" onClick={onSubmit} type="primary">
+      <button onClick={onSubmit} className="glow-on-hover">
         Add Comment
-      </Button>
+      </button>
     </Form.Item>
   </>
 );

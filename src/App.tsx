@@ -1,6 +1,6 @@
 /*----------------Importing React Components-------------------------*/
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Grid } from "./components/index";
 import PageHeader from "./components/PageHeader/PageHeader";
 import { IResourceArray } from "./Interfaces/Interfaces";
@@ -19,8 +19,17 @@ function App(): JSX.Element {
   const [postTagsArray, setPostTagsArray] = useState<string[]>([]);
   const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 
-  console.log("The user is currently searching for :", filterSearchTerm);
-  console.log("The current tag filters are :", tagsArray);
+  useEffect(() => {
+    const data = window.localStorage.getItem("CURRENT_USER");
+    if (data !== null) setCurrentActiveUser(JSON.parse(data));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem(
+      "CURRENT_USER",
+      JSON.stringify(currentActiveUser)
+    );
+  }, [currentActiveUser]);
 
   return (
     <>
@@ -39,6 +48,7 @@ function App(): JSX.Element {
         resourcesArray={resourcesArray}
         setResourcesArray={setResourcesArray}
         tagsArray={tagsArray}
+        setTagsArray={setTagsArray}
         filterSearchTerm={filterSearchTerm}
         currentActiveUser={currentActiveUser}
       />

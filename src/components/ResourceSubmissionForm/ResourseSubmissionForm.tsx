@@ -35,18 +35,24 @@ const ResourceSubmissionForm = ({
   console.log(contentType);
 
   const submitPost = async () => {
-    resourceName && URL && review && imageUrlChecker(thumbnail)
-      ? await axios.post(`${serverUrl}/postResource`, {
-          resource_name: resourceName,
-          author_name: author,
-          url: URL,
-          user_name: user_name,
-          thumbnail: thumbnail,
-          review: review,
-          tags_array: postTagsList,
-          content_type: contentType,
-        })
-      : console.log("correct your submission");
+    try {
+      resourceName && URL && review && imageUrlChecker(thumbnail)
+        ? await axios.post(`${serverUrl}/postResource`, {
+            resource_name: resourceName,
+            author_name: author,
+            url: URL,
+            user_name: user_name,
+            thumbnail: thumbnail,
+            review: review,
+            tags_array: postTagsList,
+            content_type: contentType,
+          })
+        : console.log("correct your submission");
+
+      setPostTagsArray([]);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const resetPost = (): void => {
