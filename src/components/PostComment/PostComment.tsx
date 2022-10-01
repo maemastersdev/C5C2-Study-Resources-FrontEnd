@@ -19,7 +19,7 @@ const Editor = ({ onChange, onSubmit, value }: EditorProps) => (
       <TextArea rows={4} onChange={onChange} value={value} />
     </Form.Item>
     <Form.Item>
-      <button onClick={onSubmit} className="glow-on-hover" >
+      <button onClick={onSubmit} className="glow-on-hover">
         Add Comment
       </button>
     </Form.Item>

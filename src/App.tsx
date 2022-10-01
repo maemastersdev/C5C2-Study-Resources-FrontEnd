@@ -20,16 +20,17 @@ function App(): JSX.Element {
   const [resourcesArray, setResourcesArray] = useState<IResourceArray[]>([]);
 
   useEffect(() => {
-    const data = window.localStorage.getItem('CURRENT_USER');
-    if ( data !== null ) setCurrentActiveUser(JSON.parse(data));
+    const data = window.localStorage.getItem("CURRENT_USER");
+    if (data !== null) setCurrentActiveUser(JSON.parse(data));
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem('CURRENT_USER', JSON.stringify(currentActiveUser));
+    window.localStorage.setItem(
+      "CURRENT_USER",
+      JSON.stringify(currentActiveUser)
+    );
   }, [currentActiveUser]);
 
-  
- 
   return (
     <>
       <PageHeader
@@ -47,6 +48,7 @@ function App(): JSX.Element {
         resourcesArray={resourcesArray}
         setResourcesArray={setResourcesArray}
         tagsArray={tagsArray}
+        setTagsArray={setTagsArray}
         filterSearchTerm={filterSearchTerm}
         currentActiveUser={currentActiveUser}
       />

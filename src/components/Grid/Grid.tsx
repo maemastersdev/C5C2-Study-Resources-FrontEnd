@@ -16,13 +16,10 @@ const Grid = ({
   resourcesArray,
   setResourcesArray,
   tagsArray,
+  setTagsArray,
   filterSearchTerm,
   currentActiveUser,
 }: IGrid): JSX.Element => {
-
-  
-
-
   useEffect(() => {
     filterGridByTags(resourcesArray, tagsArray);
     getAllResources(setResourcesArray, tagsArray, filterSearchTerm);
@@ -46,6 +43,7 @@ const Grid = ({
             user_name={item.user_name}
             date={item.date}
             currentActiveUser={currentActiveUser}
+            setTagsArray={setTagsArray}
           />
         ))}
       </div>

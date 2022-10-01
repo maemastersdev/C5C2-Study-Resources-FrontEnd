@@ -1,12 +1,11 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 
-import {AiOutlineComment} from 'react-icons/ai'
+import { AiOutlineComment } from "react-icons/ai";
 
 interface IGenericModal {
   children: React.ReactNode;
 }
-
 
 const GenericModal = ({ children }: IGenericModal): JSX.Element => {
   const [open, setOpen] = useState(false);
@@ -21,8 +20,12 @@ const GenericModal = ({ children }: IGenericModal): JSX.Element => {
 
   return (
     <>
-      <button className="glow-on-hover" style ={{width : "2rem", height : "2rem", marginTop : "0.5rem"}} onClick={showModal}>
-        <AiOutlineComment/>
+      <button
+        className="glow-on-hover"
+        style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
+        onClick={showModal}
+      >
+        <AiOutlineComment />
       </button>
       <Modal
         open={open}

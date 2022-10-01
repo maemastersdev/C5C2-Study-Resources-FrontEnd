@@ -12,6 +12,7 @@ export interface IResourceArray {
   likes?: number;
   thumbnail?: string;
   currentActiveUser: string;
+  setTagsArray?: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export interface ITagsArray {
@@ -51,6 +52,7 @@ export interface IGrid {
   resourcesArray: IResourceArray[];
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
   tagsArray: string[];
+  setTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
   filterSearchTerm: string;
   currentActiveUser: string;
 }

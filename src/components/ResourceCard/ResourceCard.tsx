@@ -29,6 +29,7 @@ const ResourceCard = ({
   user_name,
   date,
   currentActiveUser,
+  setTagsArray,
 }: IResourceArray): JSX.Element => {
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
