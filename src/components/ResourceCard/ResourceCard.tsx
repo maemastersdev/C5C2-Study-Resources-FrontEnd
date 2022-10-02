@@ -26,6 +26,7 @@ const ResourceCard = ({
   review,
   url,
   content_type,
+  learning_stage,
   author_name,
   thumbnail,
   user_name,
@@ -70,6 +71,13 @@ const ResourceCard = ({
                   {formatDate(date)}
                   <br />
                   {`Author: ${author_name}`}
+                  <br />
+                  <b style={{ fontSize: "14px" }}>
+                    {" "}
+                    {learning_stage.length <= 2
+                      ? `Reccomended Week : ${learning_stage}`
+                      : learning_stage}
+                  </b>
                 </b>
               </div>
             </a>

@@ -9,7 +9,7 @@ import { IResourceSubmissionForm } from "../../Interfaces/Interfaces";
 import imageUrlChecker from "../../utils/imageUrlChecker";
 import serverUrl from "../../utils/serverUrl";
 
-import { AlertBanner } from "../index";
+import { AlertBanner, FormLearningStageSelector } from "../index";
 import getAllResources from "../../utils/getAllResources";
 import FormTagSelector from "../FormTagSelector/FormTagSelector";
 import FormContentSelector from "../FormContentSelector/FormContentSelector";
@@ -30,6 +30,7 @@ const ResourceSubmissionForm = ({
   const [review, setReview] = useState("");
   const [postTagsList, setPostTagsList] = useState<string[]>([]);
   const [contentType, setContentType] = useState("");
+  const [learningStage, setLearningStage] = useState("");
 
   console.log(postTagsList);
   console.log(contentType);
@@ -41,11 +42,12 @@ const ResourceSubmissionForm = ({
             resource_name: resourceName,
             author_name: author,
             url: URL,
+            content_type: contentType,
+            learning_stage: learningStage,
             user_name: user_name,
             thumbnail: thumbnail,
             review: review,
             tags_array: postTagsList,
-            content_type: contentType,
           })
         : console.log("correct your submission");
 
@@ -109,6 +111,7 @@ const ResourceSubmissionForm = ({
         setPostTagsList={setPostTagsList}
       />
       <FormContentSelector setContentType={setContentType} />
+      <FormLearningStageSelector setLearningStage={setLearningStage} />
       <Form.Group className="mb-3 " controlId="exampleForm.ControlTextarea1">
         <Form.Label>Review</Form.Label>
         <Form.Control

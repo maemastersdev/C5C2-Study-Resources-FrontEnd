@@ -4,7 +4,7 @@ export interface IResourceArray {
   author_name?: string;
   url?: string;
   content_type?: string;
-  learning_stage?: number;
+  learning_stage: string;
   date: string;
   user_id: string;
   user_name: string;
