@@ -19,6 +19,7 @@ import { CommentListings, PostComment } from "../index";
 import getCommentsForResources from "../../utils/getCommentsForResources";
 
 import { VscExpandAll } from "react-icons/vsc";
+import LikesDislikes from "../LikesResourceCard/LikesResourceCard";
 
 const ResourceCard = ({
   resource_id,
@@ -88,6 +89,7 @@ const ResourceCard = ({
                 {resource_name} ({content_type}):
               </b>
               <p>{review}</p>
+              <LikesDislikes resource_id={resource_id} />
               <div className="container_infos">
                 <div className="tags__list">
                   <b>Tags:</b>
