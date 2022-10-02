@@ -9,6 +9,7 @@ import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 import getRandomProperty from "../../utils/getRandomPropery";
 import formatDate from "../../utils/dateFormatting";
+import LikesDislikes from "../LikesResourceCard/LikesResourceCard";
 
 const ResourceCard = ({
   resource_id,
@@ -66,7 +67,7 @@ const ResourceCard = ({
               {resource_name} ({content_type}) :
             </b>
             <p>{review}</p>
-
+            <LikesDislikes resource_id={resource_id} />
             <div className="container_infos">
               <div className="tags__list">
                 <b>Tags:</b>

@@ -1,5 +1,5 @@
 export interface IResourceArray {
-  resource_id?: number;
+  resource_id: number | null ;
   resource_name?: string;
   author_name?: string;
   url?: string;
@@ -22,6 +22,10 @@ export interface ITagsArray {
 export interface IUserName {
   user_id: string;
   user_name: string;
+}
+
+export interface ILikes {
+  likes: number;
 }
 
 export interface IPageHeader {
