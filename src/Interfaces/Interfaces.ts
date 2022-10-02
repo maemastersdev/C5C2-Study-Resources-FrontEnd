@@ -1,5 +1,5 @@
 export interface IResourceArray {
-  resource_id: number | null ;
+  resource_id: number | null;
   resource_name?: string;
   author_name?: string;
   url?: string;

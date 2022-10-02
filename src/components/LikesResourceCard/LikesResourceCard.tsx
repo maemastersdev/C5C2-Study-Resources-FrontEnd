@@ -4,7 +4,7 @@ import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 
 interface ILikesAndDislikes {
-  resource_id: number | null ;
+  resource_id: number | null;
 }
 
 interface ILikes {
@@ -16,18 +16,16 @@ export default function LikesDislikes({
 }: ILikesAndDislikes): JSX.Element {
   const [resourceLikes, setResourceLikes] = useState<number>(0);
 
-
-
-  useEffect(() => {   
-    
+  useEffect(() => {
     async function getAllLikes(): Promise<void> {
-    const response = await axios.get(`${serverUrl}/likes/${resource_id}`);
-    const allLikesArr: ILikes[] = await response.data;
-    const allLikes = allLikesArr[0]
-    setResourceLikes(allLikes.likes);
-  }
+      const response = await axios.get(`${serverUrl}/likes/${resource_id}`);
+      const allLikesArr: ILikes[] = await response.data;
+      const allLikes = allLikesArr[0];
+      setResourceLikes(allLikes.likes);
+    }
 
-    getAllLikes();}, [resource_id, resourceLikes]);
+    getAllLikes();
+  }, [resource_id, resourceLikes]);
 
   const likeResource = async (resource_id: number | null) => {
     await axios.put(`${serverUrl}/like/${resource_id}`, {
@@ -36,7 +34,7 @@ export default function LikesDislikes({
     console.log(resourceLikes);
   };
 
-  const dislikeResource = async (resource_id: number |null ) => {
+  const dislikeResource = async (resource_id: number | null) => {
     await axios.put(`${serverUrl}/dislike/${resource_id}`, {
       resource_id: resource_id,
     });
