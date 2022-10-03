@@ -9,7 +9,6 @@ import GenericModal from "../GenericModal/GenericModal";
 import PostComment from "../PostComment/PostComment";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdLaunch } from "react-icons/md";
-
 import "./SingleResourcePage.css";
 
 const blankPage = {

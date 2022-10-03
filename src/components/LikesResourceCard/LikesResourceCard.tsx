@@ -2,13 +2,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
+import getAllLikes from "../../utils/getAllLikes";
 
 interface ILikesAndDislikes {
   resource_id: number;
-}
-
-interface ILikes {
-  likes: number;
 }
 
 export default function LikesDislikes({
@@ -17,48 +14,47 @@ export default function LikesDislikes({
   const [resourceLikes, setResourceLikes] = useState<number>(0);
 
   useEffect(() => {
-    async function getAllLikes(): Promise<void> {
-      const response = await axios.get(`${serverUrl}/likes/${resource_id}`);
-      const allLikesArr: ILikes[] = await response.data;
-      const allLikes = allLikesArr[0];
-      setResourceLikes(allLikes.likes);
-    }
-
-    getAllLikes();
+    getAllLikes(resource_id, setResourceLikes);
   }, [resource_id, resourceLikes]);
 
-  const likeResource = async (resource_id: number | null) => {
+  const likeResource = async (resource_id: number) => {
     await axios.put(`${serverUrl}/like/${resource_id}`, {
       resource_id: resource_id,
     });
+    await getAllLikes(resource_id, setResourceLikes);
     console.log(resourceLikes);
   };
 
-  const dislikeResource = async (resource_id: number | null) => {
+  const dislikeResource = async (resource_id: number) => {
     await axios.put(`${serverUrl}/dislike/${resource_id}`, {
       resource_id: resource_id,
     });
+    await getAllLikes(resource_id, setResourceLikes);
     console.log(resourceLikes);
   };
 
   return (
     <>
-      <p> {resourceLikes} </p>
-      <button
-        className="glow-on-hover"
-        type="button"
-        onClick={() => likeResource(resource_id)}
-      >
-        Like
-      </button>
-
-      <button
-        className="glow-on-hover"
-        type="button"
-        onClick={() => dislikeResource(resource_id)}
-      >
-        Dislike
-      </button>
+      <div className="likes_container">
+        {/* <p> {resourceLikes} </p> */}
+        <button
+          className="glow-on-hover"
+          style={{ width: "6.9rem", height: "2rem", marginBottom: "0.5rem" }}
+          type="button"
+          onClick={() => likeResource(resource_id)}
+        >
+          Like
+        </button>
+        <b>{resourceLikes}</b>
+        <button
+          className="glow-on-hover"
+          style={{ width: "6.9rem", height: "2rem", marginBottom: "0.5rem" }}
+          type="button"
+          onClick={() => dislikeResource(resource_id)}
+        >
+          Dislike
+        </button>
+      </div>
     </>
   );
 }

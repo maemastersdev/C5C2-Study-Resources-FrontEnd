@@ -21,13 +21,23 @@ body {
   white-space: nowrap;
 }
 
-.container {
+.top-buttons {
+  position: relative;
+  top: 0rem;
   width: 100%;
-  height: 450px;
+  display: inline-block;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.container_card {
+  width: 100%;
+  height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   // box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   box-shadow: rgba(100, 0, 88, 0.4) -5px 5px, rgba(198, 40, 200, 0.3) -10px 10px,
     rgba(124, 7, 137, 0.2) -15px 15px, rgba(37, 12, 37, 0.1) -20px 20px,
@@ -35,7 +45,7 @@ body {
 
   .post {
     width: 100%;
-    height: 450px;
+    height: 550px;
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -76,8 +86,8 @@ body {
 
       img {
         object-fit: cover;
-        max-width: 100%;
-        height: 200px;
+        width: 347.5px;
+        height: 260px;
         transition: ease-in-out 600ms;
       }
     }
@@ -124,8 +134,12 @@ body {
 
           .tags__list {
             ul {
-              display: inline;
-              padding-left: 7px;
+              padding-left: 0 !important;
+            }
+
+            li {
+              display: inline-block;
+              padding-left: 5px;
               word-wrap: break-word;
               font-style: italic;
             }
