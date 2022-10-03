@@ -77,9 +77,9 @@ const ResourceCard = ({
                   <br />
                   {`Author: ${author_name}`}
                   <br />{" "}
-                  {learning_stage.length <= 2
+                  {/* {learning_stage.length <= 2
                     ? `Reccomended Week : ${learning_stage}`
-                    : learning_stage}
+                    : learning_stage} */}
                 </b>
               </div>
             </a>
