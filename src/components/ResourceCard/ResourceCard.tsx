@@ -15,11 +15,12 @@ import getRandomProperty from "../../utils/getRandomPropery";
 import formatDate from "../../utils/dateFormatting";
 import GenericModal from "../GenericModal/GenericModal";
 
-import { CommentListings, PostComment } from "../index";
+import { CommentListings, LikesResourceCard, PostComment } from "../index";
 import getCommentsForResources from "../../utils/getCommentsForResources";
-
 import { VscExpandAll } from "react-icons/vsc";
-import LikesDislikes from "../LikesResourceCard/LikesResourceCard";
+import { FaRegHeart } from "react-icons/fa";
+import addOrRemoveToFavourites from "../../utils/addOrRemoveToFavourites";
+import isResourceFavourite from "../../utils/isResourceFavourite";
 
 const ResourceCard = ({
   resource_id,
@@ -38,6 +39,9 @@ const ResourceCard = ({
   const [tagsList, setTagsList] = useState<ITagsArray[]>([]);
   const [randomIndex, setRandomIndex] = useState("");
   const [resourceComments, setResourceComments] = useState<IComment[]>([]);
+  const [favResource, setFavResource] = useState<Promise<boolean>>(
+    isResourceFavourite(resource_id, currentActiveUser)
+  );
 
   useEffect(() => {
     const getTagsForResource = async (): Promise<void> => {
@@ -53,7 +57,7 @@ const ResourceCard = ({
 
   return (
     <>
-      <div className="container">
+      <div className="container_card">
         <div className="post">
           <div className="header_post">
             <a href={url} rel="noreferrer" target="_blank">
@@ -86,40 +90,61 @@ const ResourceCard = ({
                 {resource_name} ({content_type}):
               </b>
               <p>{review}</p>
-              <LikesDislikes resource_id={resource_id} />
               <div className="container_infos">
                 <div className="tags__list">
-                  <b>Tags:</b>
                   <ul>
+                    <b>Tags:</b>
                     {tagsList.map((tag) => (
-                      <ul key={tag.unique_tag_id}>
+                      <li key={tag.unique_tag_id}>
                         <b>{tag.tag} |</b>
-                      </ul>
+                      </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <GenericModal>
-            <CommentListings resourceComments={resourceComments}>
-              {/* Gonna put the child map here */}
-            </CommentListings>
-            {currentActiveUser.length > 0 && (
-              <PostComment
-                resource_id={resource_id}
-                currentActiveUser={currentActiveUser}
-                setResourceComments={setResourceComments}
-              />
-            )}
-          </GenericModal>
-          <button
-            className="glow-on-hover"
-            style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
-            onClick={() => window.open(`/study/${resource_id}`, "_blank")}
-          >
-            <VscExpandAll />
-          </button>
+          <div className="top-buttons">
+            <GenericModal>
+              <CommentListings resourceComments={resourceComments}>
+                {/* Gonna put the child map here */}
+              </CommentListings>
+              {currentActiveUser.length > 0 && (
+                <PostComment
+                  resource_id={resource_id}
+                  currentActiveUser={currentActiveUser}
+                  setResourceComments={setResourceComments}
+                />
+              )}
+            </GenericModal>
+            <button
+              className="glow-on-hover"
+              style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
+              onClick={() => window.open(`/study/${resource_id}`, "_blank")}
+            >
+              <VscExpandAll />
+            </button>
+            <button
+              className="glow-on-hover"
+              style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
+              onClick={async () => {
+                await addOrRemoveToFavourites(
+                  resource_id,
+                  currentActiveUser,
+                  setFavResource,
+                  await favResource
+                );
+                setFavResource(
+                  isResourceFavourite(resource_id, currentActiveUser)
+                );
+              }}
+            >
+              <FaRegHeart />
+            </button>
+          </div>
+        </div>
+        <div className="likes_wrapper">
+          <LikesResourceCard resource_id={resource_id} />
         </div>
       </div>
     </>
