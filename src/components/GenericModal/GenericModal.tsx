@@ -1,7 +1,7 @@
 import { Modal } from "antd";
 import React, { useState } from "react";
 
-import { AiOutlineComment } from "react-icons/ai";
+import { BiCommentDots } from "react-icons/bi";
 
 interface IGenericModal {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ const GenericModal = ({ children }: IGenericModal): JSX.Element => {
         style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
         onClick={showModal}
       >
-        <AiOutlineComment />
+        <BiCommentDots />
       </button>
       <Modal
         open={open}
