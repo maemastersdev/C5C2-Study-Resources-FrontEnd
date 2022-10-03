@@ -145,7 +145,9 @@ const ResourceCard = ({
           </div>
         </div>
         <div className="likes_wrapper">
-          <LikesResourceCard resource_id={resource_id} />
+          {currentActiveUser.length > 0 && (
+            <LikesResourceCard resource_id={resource_id} />
+          )}
         </div>
       </div>
     </>
