@@ -12,9 +12,15 @@ const addOrRemoveToFavourites = async (
       `${serverUrl}/removeFav/${currentActiveUser}/${resource_id}`
     );
     console.log(`resource ${resource_id} has beenremoved from your favourites`);
+    alert(
+      `resource ${resource_id} has been removed from your favourites / study-list`
+    );
   } else {
     axios.post(`${serverUrl}/addFav/${currentActiveUser}/${resource_id}`);
     console.log(` resource ${resource_id} has been favourited`);
+    alert(
+      ` resource ${resource_id} has been favourited and added to your study-list`
+    );
   }
 };
 

@@ -139,6 +139,7 @@ const ResourceCard = ({
                 );
               }}
             >
+              {}
               <FaRegHeart />
             </button>
           </div>
