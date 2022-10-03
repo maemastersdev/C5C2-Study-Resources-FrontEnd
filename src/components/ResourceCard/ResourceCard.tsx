@@ -12,7 +12,6 @@ import {
 import axios from "axios";
 import serverUrl from "../../utils/serverUrl";
 import getRandomProperty from "../../utils/getRandomPropery";
-import formatDate from "../../utils/dateFormatting";
 import GenericModal from "../GenericModal/GenericModal";
 
 import { CommentListings, LikesResourceCard, PostComment } from "../index";
@@ -21,6 +20,7 @@ import { VscExpandAll } from "react-icons/vsc";
 import { FaRegHeart } from "react-icons/fa";
 import addOrRemoveToFavourites from "../../utils/addOrRemoveToFavourites";
 import isResourceFavourite from "../../utils/isResourceFavourite";
+import moment from "moment";
 
 const ResourceCard = ({
   resource_id,
@@ -73,7 +73,7 @@ const ResourceCard = ({
                 <b className="user_name">
                   Posted by {user_name}
                   <br />
-                  {formatDate(date)}
+                  {moment(date).fromNow()}
                   <br />
                   {`Author: ${author_name}`}
                   <br />{" "}
