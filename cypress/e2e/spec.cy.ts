@@ -37,7 +37,7 @@ describe('Search bar Test', () => {
     cy.get(".search-bar")
       .type('react')
       .should('have.value', 'test')
-    //sometimes they all pass
+    //sometimes they all pass.
     //types into the search bar 'value' and checks whether it's typed
   })
 })
