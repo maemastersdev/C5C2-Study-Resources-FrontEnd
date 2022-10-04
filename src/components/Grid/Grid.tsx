@@ -20,10 +20,6 @@ const Grid = ({
   filterSearchTerm,
   currentActiveUser,
 }: IGrid): JSX.Element => {
-
-  
-
-
   useEffect(() => {
     filterGridByTags(resourcesArray, tagsArray);
     getAllResources(setResourcesArray, tagsArray, filterSearchTerm);

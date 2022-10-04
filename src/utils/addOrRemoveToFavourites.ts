@@ -14,7 +14,7 @@ const addOrRemoveToFavourites = async (
     );
     console.log(`resource ${resource_id} has beenremoved from your favourites`);
     setFavResource(isResourceFavourite(resource_id, currentActiveUser));
-    
+
     alert(
       `resource ${resource_id} has been removed from your favourites / study-list`
     );

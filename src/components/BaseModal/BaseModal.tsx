@@ -65,28 +65,32 @@ const BaseModal = ({
           >
             Submit A Post
           </button>
-         {
-          !showingStudyList ?  <button
-          className="glow-on-hover"
-          type="button"
-          onClick={ async () => {
-            await showStudyList(
-              currentAcitveUser,
-              setResourcesArray,
-              currentUserStudyList());
-              setShowingStudyList(true)
-          }}
-        >
-          Show Study List
-        </button> : 
-         <button
-         className="glow-on-hover"
-         type="button"
-         onClick={ async () => exitStudyList(setResourcesArray, setShowingStudyList)}
-      >
-         Exit Study List
-       </button>
-         }
+          {!showingStudyList ? (
+            <button
+              className="glow-on-hover"
+              type="button"
+              onClick={async () => {
+                await showStudyList(
+                  currentAcitveUser,
+                  setResourcesArray,
+                  currentUserStudyList()
+                );
+                setShowingStudyList(true);
+              }}
+            >
+              Show Study List
+            </button>
+          ) : (
+            <button
+              className="glow-on-hover"
+              type="button"
+              onClick={async () =>
+                exitStudyList(setResourcesArray, setShowingStudyList)
+              }
+            >
+              Exit Study List
+            </button>
+          )}
           <button
             className="glow-on-hover"
             type="button"
