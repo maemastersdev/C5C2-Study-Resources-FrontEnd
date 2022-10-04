@@ -78,6 +78,7 @@ const ResourceSubmissionForm = ({
           placeholder="resource"
           onChange={(e) => setResourceName(e.target.value)}
           value={resourceName}
+          required={true}
         />
         {console.log(resourceName)}
         <Form.Label>Author</Form.Label>
@@ -117,6 +118,7 @@ const ResourceSubmissionForm = ({
           title="review"
           placeholder="Write a short review or a brief note on what the post is about"
           onChange={(e) => setReview(e.target.value)}
+          required={true}
         />
       </Form.Group>
       <div className="submit-buttons">
