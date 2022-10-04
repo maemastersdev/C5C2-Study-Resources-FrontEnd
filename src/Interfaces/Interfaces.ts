@@ -30,14 +30,15 @@ export interface singleResource {
 }
 
 export interface ITagsArray {
-  unique_tag_id?: number;
-  resource_id?: number;
-  tag?: string;
+  unique_tag_id: number;
+  resource_id: number;
+  tag: string;
 }
 
 export interface IUserName {
-  user_id: string;
+  user_id: number;
   user_name: string;
+  faculty: boolean;
 }
 
 export interface IPageHeader {
@@ -77,4 +78,8 @@ export interface IComment {
   resource_id: number;
   comment: string;
   date: string;
+}
+
+export interface IStudyList {
+  resource_id: number;
 }

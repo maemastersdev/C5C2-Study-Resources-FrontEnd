@@ -9,8 +9,6 @@ const isResourceFavourite = async (
     await axios.get(`${serverUrl}/getFav/${currentActiveUser}/${resource_id}`)
   ).data;
 
-  console.log(response);
-
   return response;
 };
 

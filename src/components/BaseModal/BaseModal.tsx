@@ -1,6 +1,10 @@
 import { Modal } from "antd";
+import axios from "axios";
 import React, { useState } from "react";
-import { IResourceArray } from "../../Interfaces/Interfaces";
+import { IResourceArray, IStudyList } from "../../Interfaces/Interfaces";
+import exitStudyList from "../../utils/exitStudyList";
+import serverUrl from "../../utils/serverUrl";
+import showStudyList from "../../utils/showStudyList";
 import ResourceSubmissionForm from "../ResourceSubmissionForm/ResourseSubmissionForm";
 import SignIn from "../SignIn/SignInComponent";
 
@@ -12,6 +16,7 @@ interface IBaseModal {
   postTagsArray: string[];
   tagsArray: string[];
   filterSearchTerm: string;
+  setFilterSearchTerm: React.Dispatch<React.SetStateAction<string>>;
   setPostTagsArray: React.Dispatch<React.SetStateAction<string[]>>;
   setResourcesArray: React.Dispatch<React.SetStateAction<IResourceArray[]>>;
 }
@@ -22,12 +27,21 @@ const BaseModal = ({
   tagsArray,
   postTagsArray,
   filterSearchTerm,
+  setFilterSearchTerm,
   setPostTagsArray,
   setResourcesArray,
 }: IBaseModal): JSX.Element => {
   const [open, setOpen] = useState(false);
+  const [showingStudyList, setShowingStudyList] = useState(false);
 
   const ShowUtilities = currentAcitveUser.length > 0;
+
+  const currentUserStudyList = async () => {
+    const response: IStudyList[] = (
+      await axios.get(`${serverUrl}/favourites/${currentAcitveUser}`)
+    ).data;
+    return response;
+  };
 
   const signOutUser = () => {
     setCurrentActiveUser("");
@@ -51,8 +65,34 @@ const BaseModal = ({
           >
             Submit A Post
           </button>
-          <button className="glow-on-hover" type="button">
-            Show Favourites
+         {
+          !showingStudyList ?  <button
+          className="glow-on-hover"
+          type="button"
+          onClick={ async () => {
+            await showStudyList(
+              currentAcitveUser,
+              setResourcesArray,
+              currentUserStudyList());
+              setShowingStudyList(true)
+          }}
+        >
+          Show Study List
+        </button> : 
+         <button
+         className="glow-on-hover"
+         type="button"
+         onClick={ async () => exitStudyList(setResourcesArray, setShowingStudyList)}
+      >
+         Exit Study List
+       </button>
+         }
+          <button
+            className="glow-on-hover"
+            type="button"
+            onClick={() => setFilterSearchTerm("")}
+          >
+            Clear Text Search
           </button>
           <button className="glow-on-hover" type="button" onClick={signOutUser}>
             Log Out

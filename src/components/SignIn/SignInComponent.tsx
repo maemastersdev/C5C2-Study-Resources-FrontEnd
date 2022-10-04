@@ -1,12 +1,107 @@
 /*--------IMPORT FROM REACT-----------------*/
-import axios from "axios";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from "react";
 import "./SignInComponent.scss";
 
 /*--------REACT COMPONENT-----------------*/
 import { IUserName } from "../../Interfaces/Interfaces";
-import serverUrl from "../../utils/serverUrl";
+
+const usersArray: IUserName[] = [
+  {
+    user_id: 1,
+    user_name: "Salman",
+    faculty: false,
+  },
+  {
+    user_id: 2,
+    user_name: "Keadeish",
+    faculty: false,
+  },
+  {
+    user_id: 3,
+    user_name: "Mae",
+    faculty: false,
+  },
+  {
+    user_id: 4,
+    user_name: "Lui",
+    faculty: false,
+  },
+  {
+    user_id: 5,
+    user_name: "Bhawick",
+    faculty: false,
+  },
+  {
+    user_id: 6,
+    user_name: "Amelia",
+    faculty: false,
+  },
+  {
+    user_id: 7,
+    user_name: "Ciaran",
+    faculty: true,
+  },
+  {
+    user_id: 8,
+    user_name: "Jennifer",
+    faculty: false,
+  },
+  {
+    user_id: 9,
+    user_name: "Katie",
+    faculty: true,
+  },
+  {
+    user_id: 10,
+    user_name: "Laura",
+    faculty: false,
+  },
+  {
+    user_id: 11,
+    user_name: "Lauren",
+    faculty: true,
+  },
+  {
+    user_id: 12,
+    user_name: "Leo",
+    faculty: false,
+  },
+  {
+    user_id: 13,
+    user_name: "Melissa",
+    faculty: false,
+  },
+  {
+    user_id: 14,
+    user_name: "Mistura",
+    faculty: false,
+  },
+  {
+    user_id: 15,
+    user_name: "Neill",
+    faculty: true,
+  },
+  {
+    user_id: 16,
+    user_name: "Niamh",
+    faculty: false,
+  },
+  {
+    user_id: 17,
+    user_name: "Sevgi",
+    faculty: false,
+  },
+  {
+    user_id: 18,
+    user_name: "Will",
+    faculty: false,
+  },
+  {
+    user_id: 19,
+    user_name: "Yara",
+    faculty: false,
+  },
+];
 
 interface ISignIn {
   currentActiveUser: string;
@@ -17,19 +112,8 @@ export default function SignIn({
   currentActiveUser,
   setCurrentActiveUser,
 }: ISignIn): JSX.Element {
-  const [usersArray, setUsersArray] = useState<IUserName[]>([]);
-
   //Might not actually need all this because our users list isn't dynamic.
   //get all users
-  async function getAllUsers(): Promise<void> {
-    const response = await axios.get(`${serverUrl}/users`);
-    const allUsers: IUserName[] = await response.data;
-    setUsersArray(allUsers);
-  }
-
-  useEffect(() => {
-    getAllUsers();
-  }, []);
 
   const LogInUser = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCurrentActiveUser(e.target.value);

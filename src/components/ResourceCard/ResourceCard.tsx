@@ -53,7 +53,7 @@ const ResourceCard = ({
     getTagsForResource();
     getCommentsForResources(resource_id, setResourceComments);
     setRandomIndex(getRandomProperty(spacePictures));
-  }, [resource_id, setResourceComments]);
+  }, [resource_id, setResourceComments, setFavResource]);
 
   return (
     <>
@@ -95,7 +95,7 @@ const ResourceCard = ({
                   <ul>
                     <b>Tags:</b>
                     {tagsList.map((tag) => (
-                      <li key={tag.unique_tag_id}>
+                      <li key={tag.tag}>
                         <b>{tag.tag} |</b>
                       </li>
                     ))}
@@ -124,29 +124,30 @@ const ResourceCard = ({
             >
               <VscExpandAll />
             </button>
-            <button
-              className="glow-on-hover"
-              style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
-              onClick={async () => {
-                await addOrRemoveToFavourites(
-                  resource_id,
-                  currentActiveUser,
-                  setFavResource,
-                  await favResource
-                );
-                setFavResource(
-                  isResourceFavourite(resource_id, currentActiveUser)
-                );
-              }}
-            >
-              {}
-              <FaRegHeart />
-            </button>
+            {currentActiveUser.length > 0 && (
+              <button
+                className="glow-on-hover"
+                style={{ width: "2rem", height: "2rem", marginTop: "0.5rem" }}
+                onClick={async () => {
+                  await addOrRemoveToFavourites(
+                    resource_id,
+                    currentActiveUser,
+                    setFavResource,
+                    await favResource
+                  );
+                }}
+              >
+                <FaRegHeart />
+              </button>
+            )}
           </div>
         </div>
         <div className="likes_wrapper">
           {currentActiveUser.length > 0 && (
-            <LikesResourceCard resource_id={resource_id} />
+            <LikesResourceCard
+              currentActiveUser={currentActiveUser}
+              resource_id={resource_id}
+            />
           )}
         </div>
       </div>

@@ -154,6 +154,7 @@ const PageHeader = ({
           tagsArray={tagsArray}
           postTagsArray={postTagsArray}
           filterSearchTerm={filterSearchTerm}
+          setFilterSearchTerm={setFilterSearchTerm}
           setPostTagsArray={setPostTagsArray}
           setResourcesArray={setResourcesArray}
         />
