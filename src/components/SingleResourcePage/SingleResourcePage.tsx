@@ -63,7 +63,7 @@ const SingleResourcePage = (): JSX.Element => {
           </h2>
           <p>{postInformation.review}</p>
           <p>This Post has {postInformation.likes} likes </p>
-          <p> Orignally Posted by: {postInformation.user_name}</p>
+          <p> Originally Posted by: {postInformation.user_name}</p>
           <p>Author : {postInformation.author_name}</p>
           <p>
             Posted on:{" "}
