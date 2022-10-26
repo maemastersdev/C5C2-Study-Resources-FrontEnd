@@ -1,0 +1,17 @@
+.Wrapper {
+  max-width: 1480px;
+  margin: 0 auto; /* Margins are used to create space around elements, outside of any defined borders. */
+  // padding: 0 10px; /*Padding is used to create space around an element's content, inside of any defined borders.*/
+
+  .Content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    grid-auto-rows: auto;
+  }
+}
+
+.Grid__Header {
+  text-align: center;
+  margin: 1rem 0;
+}
